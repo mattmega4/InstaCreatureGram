@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		8BDFFA651C64298500982401 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFA641C64298500982401 /* AppDelegate.swift */; };
-		8BDFFA671C64298500982401 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFA661C64298500982401 /* ViewController.swift */; };
 		8BDFFA6A1C64298500982401 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BDFFA681C64298500982401 /* Main.storyboard */; };
 		8BDFFA6D1C64298500982401 /* InstaCreatureGram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFA6B1C64298500982401 /* InstaCreatureGram.xcdatamodeld */; };
 		8BDFFA6F1C64298500982401 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BDFFA6E1C64298500982401 /* Assets.xcassets */; };
 		8BDFFA721C64298500982401 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BDFFA701C64298500982401 /* LaunchScreen.storyboard */; };
+		8BDFFA841C642EEE00982401 /* ElementalFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFA831C642EEE00982401 /* ElementalFeedViewController.swift */; };
+		8BDFFA861C642EF900982401 /* ElementalCreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFA851C642EF900982401 /* ElementalCreatorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8BDFFA611C64298500982401 /* InstaCreatureGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaCreatureGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BDFFA641C64298500982401 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8BDFFA661C64298500982401 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8BDFFA691C64298500982401 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8BDFFA6C1C64298500982401 /* InstaCreatureGram.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InstaCreatureGram.xcdatamodel; sourceTree = "<group>"; };
 		8BDFFA6E1C64298500982401 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8BDFFA711C64298500982401 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8BDFFA731C64298500982401 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BDFFA831C642EEE00982401 /* ElementalFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementalFeedViewController.swift; sourceTree = "<group>"; };
+		8BDFFA851C642EF900982401 /* ElementalCreatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementalCreatorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +42,8 @@
 		8BDFFA581C64298500982401 = {
 			isa = PBXGroup;
 			children = (
+				8BDFFA831C642EEE00982401 /* ElementalFeedViewController.swift */,
+				8BDFFA851C642EF900982401 /* ElementalCreatorViewController.swift */,
 				8BDFFA631C64298500982401 /* InstaCreatureGram */,
 				8BDFFA621C64298500982401 /* Products */,
 			);
@@ -57,7 +61,6 @@
 			isa = PBXGroup;
 			children = (
 				8BDFFA641C64298500982401 /* AppDelegate.swift */,
-				8BDFFA661C64298500982401 /* ViewController.swift */,
 				8BDFFA681C64298500982401 /* Main.storyboard */,
 				8BDFFA6E1C64298500982401 /* Assets.xcassets */,
 				8BDFFA701C64298500982401 /* LaunchScreen.storyboard */,
@@ -138,8 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BDFFA841C642EEE00982401 /* ElementalFeedViewController.swift in Sources */,
+				8BDFFA861C642EF900982401 /* ElementalCreatorViewController.swift in Sources */,
 				8BDFFA6D1C64298500982401 /* InstaCreatureGram.xcdatamodeld in Sources */,
-				8BDFFA671C64298500982401 /* ViewController.swift in Sources */,
 				8BDFFA651C64298500982401 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
