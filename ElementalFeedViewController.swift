@@ -12,7 +12,21 @@ class ElementalFeedViewController: UIViewController, UITableViewDataSource, UITa
     
     @IBOutlet weak var tableView: UITableView!
     
-    let sampleArray = ["hello", "you", "wolrd", "wolrd", "wolrd", "wolrd", "wolrd"]
+//    let sampleArray = ["hello", "you", "dirty", "pirate", "trampoleen", "cat", "wolrd"]
+    
+    
+    let sampleArray: [UIImage] = [
+        UIImage(named: "logo1.png")!,
+        UIImage(named: "logo2.png")!,
+        UIImage(named: "logo3.png")!,
+        UIImage(named: "logo4.png")!,
+        UIImage(named: "logo5.png")!,
+        UIImage(named: "logo6.png")!,
+        UIImage(named: "logo7.png")!,
+        UIImage(named: "logo8.png")!,
+        UIImage(named: "logo9.png")!,
+        UIImage(named: "logo10.png")!
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +40,8 @@ class ElementalFeedViewController: UIViewController, UITableViewDataSource, UITa
         
         
         
-        cell.textLabel!.text = self.sampleArray[indexPath.row]
-        print(sampleArray)
+        cell.imageView!.image = self.sampleArray[indexPath.section]
+        
         
         return cell
         
@@ -45,20 +59,49 @@ class ElementalFeedViewController: UIViewController, UITableViewDataSource, UITa
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let title: UILabel = UILabel()
-        title.text = "Oh herro"
-        title.backgroundColor = UIColor.blueColor()
+
+        
+        let string = self.sampleArray[section]
+//        title. = UIImage
+        
+        title.backgroundColor = UIColor.blackColor()
+        title.alpha = 0.8
         
         return title
     }
     
-   
+    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let title: UILabel = UILabel()
+        
+        title.backgroundColor = UIColor.grayColor()
+        title.alpha = 0.8
+        
+        return title
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        tableView.estimatedRowHeight = 11.0
+        tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.contentInset = UIEdgeInsetsMake(0, -15, 0, 0);
+        
+        return tableView.frame.width
+    }
+    
+    
     
     
     func tableView(tableView: UITableView,
         heightForHeaderInSection section: Int) -> CGFloat{
             
-     return 70.0
+     return 50.0
     }
+    
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 50.0
+    }
+    
+
 
     @IBOutlet weak var tabOne: UITabBarItem!
 
