@@ -58,23 +58,23 @@ class ElementalFeedViewController: UIViewController, UITableViewDataSource, UITa
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
-        let title: UILabel = UILabel()
+        let title = UIView()
 
-        
-        let string = self.sampleArray[section]
+        // not sure why this was done, masks the image
+//        let string = self.sampleArray[section]
 //        title. = UIImage
         
-        title.backgroundColor = UIColor.blackColor()
-        title.alpha = 0.8
+//        title.backgroundColor = UIColor.blackColor()
+        title.alpha = 0.0
         
         return title
     }
     
     func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let title: UILabel = UILabel()
-        
-        title.backgroundColor = UIColor.grayColor()
-        title.alpha = 0.8
+        let title = UIView()
+//        not sure why this was done, masks the image
+//        title.backgroundColor = UIColor.grayColor()
+        title.alpha = 0.0
         
         return title
     }
