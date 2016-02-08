@@ -13,10 +13,23 @@ class ElementalCreatorViewController: UIViewController, UIImagePickerControllerD
     @IBOutlet var imageView: UIImageView!
     
     var imagePicker: UIImagePickerController!
+    let filter = CIFilter(name: "CISepiaTone")
+    let context = CIContext(options: nil)
+    var extent: CGRect!
+    var scaleFactor: CGFloat!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        scaleFactor = UIScreen.mainScreen().scale
+        extent = CGRectApplyAffineTransform(UIScreen.mainScreen().bounds, CGAffineTransformMakeScale(scaleFactor, scaleFactor))
+        
+        let ciImage = CIImage(image: imageView.image!)
+        
+        filter?.setDefaults()
+        filter?.setValue(ciImage, forKey: kCIInputImageKey)
+        
+        imageView.image = UIImage(CGImage: context.createCGImage((filter?.outputImage)!, fromRect: extent))
     }
     
     //SCREENSHOT FUNCTIONALITY
@@ -25,7 +38,6 @@ class ElementalCreatorViewController: UIViewController, UIImagePickerControllerD
         let image = takeScreenshot()
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
     }
-    
     
     func takeScreenshot() -> UIImage {
         let theView = self.view
@@ -53,5 +65,8 @@ class ElementalCreatorViewController: UIViewController, UIImagePickerControllerD
         
     }
 
+    //IMAGE FILTER FUNCTIONALITY
+    //Not yet hooked up to Storyboard
+    
 
 }
