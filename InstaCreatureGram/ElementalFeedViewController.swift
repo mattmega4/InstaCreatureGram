@@ -31,7 +31,13 @@ class ElementalFeedViewController: UIViewController, UITableViewDataSource, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+       
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.tabBarController?.navigationItem.hidesBackButton = true
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -61,6 +67,7 @@ class ElementalFeedViewController: UIViewController, UITableViewDataSource, UITa
         let title = UIView()
 
         // not sure why this was done, masks the image
+        // thats how instagram does it....its semi transparent
 //        let string = self.sampleArray[section]
 //        title. = UIImage
         
@@ -73,6 +80,7 @@ class ElementalFeedViewController: UIViewController, UITableViewDataSource, UITa
     func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let title = UIView()
 //        not sure why this was done, masks the image
+        //insagram has a footer i believe, but i think there is a code snippet that turns off the persistance, will search for it
 //        title.backgroundColor = UIColor.grayColor()
         title.alpha = 0.0
         
