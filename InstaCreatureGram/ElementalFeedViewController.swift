@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ElementalFeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ElementalFeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -104,6 +104,20 @@ class ElementalFeedViewController: UIViewController, UITableViewDataSource, UITa
 
 
     @IBOutlet weak var tabOne: UITabBarItem!
+    
+    
+    //OPEN PHOTO LIBRARY FUNCTIONALITY
+    //Not yet hooked up to Storyboard button
+    @IBAction func openPhotoLibrary(sender: UIBarButtonItem) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            imagePicker.allowsEditing = true
+            self.presentViewController(imagePicker, animated: true, completion: nil)
+        }
+        
+    }
 
 
 }
