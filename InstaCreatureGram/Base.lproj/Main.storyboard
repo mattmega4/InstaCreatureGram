@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7WX-nL-zqV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7WX-nL-zqV">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -123,11 +123,19 @@
                                     <constraint firstAttribute="height" constant="60" id="b39-lm-Mjr"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N39-rh-8z0">
-                                <rect key="frame" x="283" y="349" width="34" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mqg-Ug-nli">
+                                <rect key="frame" x="269" y="345" width="63" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="34" id="PLu-ka-C2J"/>
-                                    <constraint firstAttribute="height" constant="30" id="Rcw-p1-tUC"/>
+                                    <constraint firstAttribute="width" constant="63" id="5hx-yF-Xwb"/>
+                                    <constraint firstAttribute="height" constant="30" id="gqN-sm-p0L"/>
+                                </constraints>
+                                <state key="normal" title="new user"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N39-rh-8z0">
+                                <rect key="frame" x="283" y="383" width="34" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="34" id="TDv-jL-vih"/>
+                                    <constraint firstAttribute="height" constant="30" id="h33-Dx-u0A"/>
                                 </constraints>
                                 <state key="normal" title="login"/>
                                 <connections>
@@ -137,9 +145,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="N39-rh-8z0" firstAttribute="centerX" secondItem="sLm-PG-UCv" secondAttribute="centerX" id="7kT-oa-rOC"/>
+                            <constraint firstItem="mqg-Ug-nli" firstAttribute="centerX" secondItem="sLm-PG-UCv" secondAttribute="centerX" id="8nK-UG-Jwm"/>
                             <constraint firstItem="N2t-Ra-kwv" firstAttribute="centerY" secondItem="sLm-PG-UCv" secondAttribute="centerY" id="A0o-DL-Rn8"/>
-                            <constraint firstItem="N39-rh-8z0" firstAttribute="top" secondItem="hGA-Hi-89z" secondAttribute="bottom" constant="19" id="sIW-m0-PiZ"/>
+                            <constraint firstItem="N39-rh-8z0" firstAttribute="centerX" secondItem="sLm-PG-UCv" secondAttribute="centerX" id="KSl-gL-ocL"/>
+                            <constraint firstItem="mqg-Ug-nli" firstAttribute="top" secondItem="N2t-Ra-kwv" secondAttribute="bottom" constant="15" id="cLp-s0-e7J"/>
+                            <constraint firstItem="N39-rh-8z0" firstAttribute="top" secondItem="mqg-Ug-nli" secondAttribute="bottom" constant="8" id="oRo-CT-3jG"/>
                             <constraint firstItem="N2t-Ra-kwv" firstAttribute="centerX" secondItem="sLm-PG-UCv" secondAttribute="centerX" id="syj-jB-gRG"/>
                         </constraints>
                     </view>
