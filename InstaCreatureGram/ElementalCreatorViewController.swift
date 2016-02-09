@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet weak var imageViewOne: UIImageView!
@@ -24,21 +24,44 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
     var scaleFactor: CGFloat!
     
     var topArr: [UIImage]!
+    var midArr: [UIImage]!
     
-//    let model: [[UIImage]] = generateRandomData()
+//create an array of array
+    var combinedArr : [[UIImage]]?
+
+//    combinedArr
     
+    var expanded = false
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        imageViewOne.userInteractionEnabled = true
+ 
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "tap:")
+        tapGestureRecognizer.numberOfTapsRequired = 2
+        
+        let pinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: "pinch:")
+        
+        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: "pan:")
+        panGestureRecognizer.minimumNumberOfTouches = 1
+        panGestureRecognizer.maximumNumberOfTouches = 2
+        
+        let rotationGestureRecognizer = UIRotationGestureRecognizer(target: self, action: "rotate:")
+        
+        
+        imageViewOne.userInteractionEnabled = true
+        imageViewOne.addGestureRecognizer(tapGestureRecognizer)
+        imageViewOne.addGestureRecognizer(pinchGestureRecognizer)
+        imageViewOne.addGestureRecognizer(panGestureRecognizer)
+        imageViewOne.addGestureRecognizer(rotationGestureRecognizer)
+
+        
         tableView.delegate = self
         
         topArr = [
-            UIImage(named: "top1.png")!,
-            UIImage(named: "top1.png")!,
-            UIImage(named: "top1.png")!,
-            UIImage(named: "top1.png")!,
             UIImage(named: "top1.png")!,
             UIImage(named: "top2.png")!,
             UIImage(named: "top3.png")!,
@@ -51,6 +74,29 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
             UIImage(named: "top10.png")!
         ]
         
+        midArr = [
+            UIImage(named: "mid1.jpg")!,
+            UIImage(named: "mid2.jpg")!,
+            UIImage(named: "mid3.jpg")!,
+            UIImage(named: "mid4.jpg")!,
+            UIImage(named: "mid5.jpg")!,
+            UIImage(named: "mid6.jpg")!,
+            UIImage(named: "mid7.jpg")!,
+            UIImage(named: "mid8.jpg")!,
+            UIImage(named: "mid9.jpg")!,
+            UIImage(named: "mid10.jpg")!,
+            UIImage(named: "mid11.jpg")!,
+            UIImage(named: "mid12.jpg")!,
+            UIImage(named: "mid13.jpg")!,
+            UIImage(named: "mid14.jpg")!,
+            UIImage(named: "mid15.jpg")!,
+            UIImage(named: "mid16.jpg")!
+        ]
+        
+        self.combinedArr = [topArr, midArr]
+        
+//        combinedArr[0]
+//        combinedArr[1]
         //IMAGE FILTER FUNCTIONALITY
         //        scaleFactor = UIScreen.mainScreen().scale
         //        extent = CGRectApplyAffineTransform(UIScreen.mainScreen().bounds, CGAffineTransformMakeScale(scaleFactor, scaleFactor))
@@ -62,6 +108,52 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
         //
         //        imageView.image = UIImage(CGImage: context.createCGImage((filter?.outputImage)!, fromRect: extent))
     }
+    
+    func tap(gestureRecognizer: UITapGestureRecognizer) {
+        var frame = imageViewOne.frame
+        if (!expanded) {
+            frame.size.height = frame.size.height * 2
+            frame.size.width = frame.size.width * 2
+            expanded = true
+        } else {
+            frame.size.height = frame.size.height / 2
+            frame.size.width = frame.size.width / 2
+            expanded = false
+        }
+        
+        imageViewOne.frame = frame
+    }
+    
+    func pinch(gestureRecognizer: UIPinchGestureRecognizer) {
+        if gestureRecognizer.state == UIGestureRecognizerState.Began || gestureRecognizer.state == UIGestureRecognizerState.Changed {
+            imageViewOne.transform = CGAffineTransformScale(imageViewOne.transform, gestureRecognizer.scale, gestureRecognizer.scale)
+            gestureRecognizer.scale = 1
+        }
+    }
+    
+    func pan(gestureRecognizer: UIPanGestureRecognizer) {
+        if gestureRecognizer.state == UIGestureRecognizerState.Began || gestureRecognizer.state == UIGestureRecognizerState.Changed {
+            let translation = gestureRecognizer.translationInView(imageViewOne.superview!)
+            imageViewOne.center = CGPointMake(imageViewOne.center.x + translation.x, imageViewOne.center.y + translation.y)
+            gestureRecognizer.setTranslation(CGPointZero, inView: imageViewOne.superview)
+        }
+    }
+    
+    func rotate(gestureRecognizer: UIRotationGestureRecognizer) {
+        if gestureRecognizer.state == UIGestureRecognizerState.Began || gestureRecognizer.state == UIGestureRecognizerState.Changed {
+            imageViewOne.transform = CGAffineTransformRotate(imageViewOne.transform, gestureRecognizer.rotation)
+            gestureRecognizer.rotation = 0
+        }
+    }
+    
+    
+    
+    
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer,
+        shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+            return true
+    }
+
     
     //SCREENSHOT FUNCTIONALITY
     @IBAction func screenShot(sender: AnyObject) {
@@ -95,15 +187,15 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
     
     func tableView(tableView: UITableView,
         numberOfRowsInSection section: Int) -> Int {
-            return self.topArr.count
+            return 3
     }
     
     func tableView(tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
             
             let cell = tableView.dequeueReusableCellWithIdentifier("CellT",
-                forIndexPath: indexPath)
-            
+                forIndexPath: indexPath) as! TableViewCell
+            cell.whichCell = indexPath.row
             return cell
     }
     

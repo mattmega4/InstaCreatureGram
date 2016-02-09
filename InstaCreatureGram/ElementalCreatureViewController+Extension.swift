@@ -9,9 +9,7 @@
 import Foundation
 import UIKit
 
-extension ElementalCreatorViewController: UICollectionViewDelegate, UICollectionViewDataSource, UIGestureRecognizerDelegate {
-    
-    
+extension ElementalCreatorViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
  
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -32,7 +30,13 @@ extension ElementalCreatorViewController: UICollectionViewDelegate, UICollection
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CellC",
                 forIndexPath: indexPath)
             
-            cell.backgroundView = UIImageView.init(image: topArr[indexPath.item])
+//            print(collectionView.tag)
+            if collectionView.tag == 0 {
+                cell.backgroundView = UIImageView.init(image: topArr[indexPath.item])
+            } else if (collectionView.tag == 1) {
+                cell.backgroundView = UIImageView.init(image: midArr[indexPath.item])
+            }
+            
             
             
             return cell
