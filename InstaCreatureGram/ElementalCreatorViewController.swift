@@ -8,11 +8,10 @@
 
 import UIKit
 
-class ElementalCreatorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ElementalCreatorViewController: UIViewController {
     
     @IBOutlet var imageView: UIImageView!
     
-    var imagePicker: UIImagePickerController!
     let filter = CIFilter(name: "CISepiaTone")
     let context = CIContext(options: nil)
     var extent: CGRect!
@@ -21,6 +20,7 @@ class ElementalCreatorViewController: UIViewController, UIImagePickerControllerD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //IMAGE FILTER FUNCTIONALITY
         scaleFactor = UIScreen.mainScreen().scale
         extent = CGRectApplyAffineTransform(UIScreen.mainScreen().bounds, CGAffineTransformMakeScale(scaleFactor, scaleFactor))
         
@@ -33,7 +33,6 @@ class ElementalCreatorViewController: UIViewController, UIImagePickerControllerD
     }
     
     //SCREENSHOT FUNCTIONALITY
-    //Not yet hooked up to Storyboard button
     @IBAction func screenShot(sender: AnyObject) {
         let image = takeScreenshot()
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
@@ -47,26 +46,4 @@ class ElementalCreatorViewController: UIViewController, UIImagePickerControllerD
         UIGraphicsEndImageContext()
         return image
     }
-    
-    //TAKE PHOTO FUNCTIONALITY
-    //Not yet hooked up to Storyboard button
-    @IBAction func takePhoto(sender: UIButton) {
-        
-        imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .Camera
-        
-        presentViewController(imagePicker, animated: true, completion: nil)
-    }
-    
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        imagePicker.dismissViewControllerAnimated(true, completion: nil)
-        imageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
-        
-    }
-
-    //IMAGE FILTER FUNCTIONALITY
-    //Not yet hooked up to Storyboard
-    
-
 }
