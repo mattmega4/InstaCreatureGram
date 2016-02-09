@@ -9,12 +9,21 @@
 import Foundation
 import UIKit
 
-extension ElementalCreatorViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension ElementalCreatorViewController: UICollectionViewDelegate, UICollectionViewDataSource, UIGestureRecognizerDelegate {
+    
+    
+    
+ 
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    
     
     func collectionView(collectionView: UICollectionView,
         numberOfItemsInSection section: Int) -> Int {
             
-            return model[collectionView.tag].count
+            return topArr.count
     }
     
     func collectionView(collectionView: UICollectionView,
@@ -23,9 +32,23 @@ extension ElementalCreatorViewController: UICollectionViewDelegate, UICollection
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CellC",
                 forIndexPath: indexPath)
             
-            cell.backgroundColor = model[collectionView.tag][indexPath.item]
+            cell.backgroundView = UIImageView.init(image: topArr[indexPath.item])
+            
             
             return cell
 }
+
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        let cell = collectionView.cellForItemAtIndexPath(indexPath)!
+//        let color = cell.contentView
+//        imageViewOne.addSubview(color)
+//        print("\(color)")
+        let view = cell.backgroundView as! UIImageView
+        let image = view.image!
+        self.imageViewOne.image = image
+        
+    }
     
 }
