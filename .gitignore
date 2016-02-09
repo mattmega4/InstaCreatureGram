@@ -63,3 +63,5 @@ fastlane/report.xml
 fastlane/screenshots
 
 InstaCreatureGram.xcodeproj/project.xcworkspace/xcuserdata/matthewhowessingleton.xcuserdatad/
+
+.DS_Store
