@@ -14,7 +14,7 @@ extension ElementalCreatorViewController: UICollectionViewDelegate, UICollection
     func collectionView(collectionView: UICollectionView,
         numberOfItemsInSection section: Int) -> Int {
             
-            return model[collectionView.tag].count
+            return topArr.count
     }
     
     func collectionView(collectionView: UICollectionView,
@@ -23,7 +23,9 @@ extension ElementalCreatorViewController: UICollectionViewDelegate, UICollection
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CellC",
                 forIndexPath: indexPath)
             
-            cell.backgroundColor = model[collectionView.tag][indexPath.item]
+            cell.backgroundView = topArr[indexPath.item]
+            //im stuck here
+            
             
             return cell
 }

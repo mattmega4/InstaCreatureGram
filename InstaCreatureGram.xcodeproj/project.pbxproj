@@ -12,7 +12,6 @@
 		325BEC4E1C6734D0004C281C /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325BEC4D1C6734D0004C281C /* UserProfileViewController.swift */; };
 		325BEC501C6734E0004C281C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325BEC4F1C6734E0004C281C /* LoginViewController.swift */; };
 		325BEC521C6734F4004C281C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325BEC511C6734F4004C281C /* SearchViewController.swift */; };
-		8B6405EB1C697E2B00081C13 /* temporary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6405EA1C697E2B00081C13 /* temporary.swift */; };
 		8B6405ED1C697E4D00081C13 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6405EC1C697E4D00081C13 /* TableViewCell.swift */; };
 		8B6405EF1C69808D00081C13 /* ElementalCreatureViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6405EE1C69808D00081C13 /* ElementalCreatureViewController+Extension.swift */; };
 		8BDFFA651C64298500982401 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFA641C64298500982401 /* AppDelegate.swift */; };
@@ -29,7 +28,6 @@
 		325BEC4D1C6734D0004C281C /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		325BEC4F1C6734E0004C281C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		325BEC511C6734F4004C281C /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		8B6405EA1C697E2B00081C13 /* temporary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = temporary.swift; sourceTree = "<group>"; };
 		8B6405EC1C697E4D00081C13 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		8B6405EE1C69808D00081C13 /* ElementalCreatureViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ElementalCreatureViewController+Extension.swift"; sourceTree = "<group>"; };
 		8BDFFA611C64298500982401 /* InstaCreatureGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaCreatureGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,7 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				325BEC491C673104004C281C /* ElementalCreatorViewController.swift */,
-				8B6405EA1C697E2B00081C13 /* temporary.swift */,
+				8B6405EE1C69808D00081C13 /* ElementalCreatureViewController+Extension.swift */,
 				8B6405EC1C697E4D00081C13 /* TableViewCell.swift */,
 				97E50FF61C692BCF0034B575 /* CameraViewController.swift */,
 				325BEC4A1C673104004C281C /* ElementalFeedViewController.swift */,
@@ -82,7 +80,6 @@
 				325BEC511C6734F4004C281C /* SearchViewController.swift */,
 				8BDFFA641C64298500982401 /* AppDelegate.swift */,
 				8BDFFA681C64298500982401 /* Main.storyboard */,
-				8B6405EE1C69808D00081C13 /* ElementalCreatureViewController+Extension.swift */,
 				8BDFFA6E1C64298500982401 /* Assets.xcassets */,
 				8BDFFA701C64298500982401 /* LaunchScreen.storyboard */,
 				8BDFFA731C64298500982401 /* Info.plist */,
@@ -163,7 +160,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				325BEC501C6734E0004C281C /* LoginViewController.swift in Sources */,
-				8B6405EB1C697E2B00081C13 /* temporary.swift in Sources */,
 				325BEC521C6734F4004C281C /* SearchViewController.swift in Sources */,
 				325BEC4C1C673104004C281C /* ElementalFeedViewController.swift in Sources */,
 				325BEC4E1C6734D0004C281C /* UserProfileViewController.swift in Sources */,

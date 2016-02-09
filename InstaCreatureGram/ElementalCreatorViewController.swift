@@ -15,7 +15,6 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
     @IBOutlet weak var imageViewOne: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
-    let model: [[UIColor]] = generateRandomData()
     var storedOffsets = [Int: CGFloat]()
     
     let filter = CIFilter(name: "CISepiaTone")
@@ -24,21 +23,38 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
     var extent: CGRect!
     var scaleFactor: CGFloat!
     
+    var topArr: [UIImage]!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         
+        topArr = [
+            UIImage(named: "top1.png")!,
+            UIImage(named: "top2.png")!,
+            UIImage(named: "top3.png")!,
+            UIImage(named: "top4.png")!,
+            UIImage(named: "top5.png")!,
+            UIImage(named: "top6.png")!,
+            UIImage(named: "top7.png")!,
+            UIImage(named: "top8.png")!,
+            UIImage(named: "top9.png")!,
+            UIImage(named: "top10.png")!
+        ]
+        
         //IMAGE FILTER FUNCTIONALITY
-//        scaleFactor = UIScreen.mainScreen().scale
-//        extent = CGRectApplyAffineTransform(UIScreen.mainScreen().bounds, CGAffineTransformMakeScale(scaleFactor, scaleFactor))
-//        
-////        let ciImage = CIImage(image: imageView.image!)
-//        
-//        filter?.setDefaults()
-////        filter?.setValue(ciImage, forKey: kCIInputImageKey)
-//        
-//        imageView.image = UIImage(CGImage: context.createCGImage((filter?.outputImage)!, fromRect: extent))
+        //        scaleFactor = UIScreen.mainScreen().scale
+        //        extent = CGRectApplyAffineTransform(UIScreen.mainScreen().bounds, CGAffineTransformMakeScale(scaleFactor, scaleFactor))
+        //
+        ////        let ciImage = CIImage(image: imageView.image!)
+        //
+        //        filter?.setDefaults()
+        ////        filter?.setValue(ciImage, forKey: kCIInputImageKey)
+        //
+        //        imageView.image = UIImage(CGImage: context.createCGImage((filter?.outputImage)!, fromRect: extent))
     }
     
     //SCREENSHOT FUNCTIONALITY
@@ -58,7 +74,7 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
     
     func tableView(tableView: UITableView,
         numberOfRowsInSection section: Int) -> Int {
-            return model.count
+            return self.topArr.count
     }
     
     func tableView(tableView: UITableView,
@@ -91,7 +107,17 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
     
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        //this is the delegate method needed
+        
+        let cell = collectionView.cellForItemAtIndexPath(indexPath)!
+        let color = cell.backgroundColor
+        self.imageViewOne.backgroundColor = color
+        //this needs to be adjusted
+        
+        
+
+        
+        
+        
     }
     
 }
