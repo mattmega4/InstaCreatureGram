@@ -9,11 +9,18 @@
 import UIKit
 import CoreData
 
+let FirebaseUrl = "https://instacreature.firebaseio.com/"
+var UID = ""
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    override init() {
+        super.init()
+        Firebase.defaultConfig().persistenceEnabled = true
+    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.

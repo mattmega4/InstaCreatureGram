@@ -10,6 +10,9 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +22,18 @@ class LoginViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //todo ib action linking to create new user
+    
+    
+    @IBAction func onNewUserButtonTapped(sender: UIButton) {
+        User().createNewUser(emailTextField.text!, password: passwordTextField.text!)
+        self.performSegueWithIdentifier("login", sender: sender)
+    }
+    
+    @IBAction func onLoginButtonTapped(sender: AnyObject) {
+        User().loginUser(emailTextField.text!, password: passwordTextField.text!)
     }
     
 

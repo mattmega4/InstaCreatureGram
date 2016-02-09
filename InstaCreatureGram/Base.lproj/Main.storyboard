@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7WX-nL-zqV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7WX-nL-zqV">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -130,6 +130,9 @@
                                     <constraint firstAttribute="height" constant="30" id="gqN-sm-p0L"/>
                                 </constraints>
                                 <state key="normal" title="new user"/>
+                                <connections>
+                                    <action selector="onNewUserButtonTapped:" destination="7WX-nL-zqV" eventType="touchUpInside" id="QMm-zl-Ffz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N39-rh-8z0">
                                 <rect key="frame" x="283" y="383" width="34" height="30"/>
@@ -139,7 +142,8 @@
                                 </constraints>
                                 <state key="normal" title="login"/>
                                 <connections>
-                                    <segue destination="P0a-QX-QZg" kind="show" id="3xs-GI-8Qe"/>
+                                    <action selector="onLoginButtonTapped:" destination="7WX-nL-zqV" eventType="touchUpInside" id="C9g-U4-fax"/>
+                                    <segue destination="P0a-QX-QZg" kind="show" identifier="" id="3xs-GI-8Qe"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -153,6 +157,10 @@
                             <constraint firstItem="N2t-Ra-kwv" firstAttribute="centerX" secondItem="sLm-PG-UCv" secondAttribute="centerX" id="syj-jB-gRG"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="DXU-GK-k7q" id="kLA-1a-XEb"/>
+                        <outlet property="passwordTextField" destination="hGA-Hi-89z" id="RX0-kh-SCu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2bs-E5-P9F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
