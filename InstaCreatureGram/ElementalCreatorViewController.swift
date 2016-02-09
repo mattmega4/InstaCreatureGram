@@ -8,12 +8,18 @@
 
 import UIKit
 
-class ElementalCreatorViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ElementalCreatorViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var imageViewOne: UIImageView!
+    
     let model: [[UIColor]] = generateRandomData()
     var storedOffsets = [Int: CGFloat]()
+    
+    let pinchRec = UIPinchGestureRecognizer()
+    let rotateRec = UIRotationGestureRecognizer()
+    let tapRec = UITapGestureRecognizer()
     
     
     
@@ -22,6 +28,13 @@ class ElementalCreatorViewController: UIViewController, UITableViewDataSource, U
         super.viewDidLoad()
         
         tableView.delegate = self
+        
+        tapRec.addTarget(self, action: "tappedView")
+        pinchRec.addTarget(self, action: "pinchedView:")
+        rotateRec.addTarget(self, action: "rotatedView:")
+        
+        //not sure what ^ does but following tutorial
+        
         
         
         
@@ -65,14 +78,11 @@ class ElementalCreatorViewController: UIViewController, UITableViewDataSource, U
     }
     
     
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        //this is the delegate method needed
     }
-    */
+    
+    
+ 
     
 }

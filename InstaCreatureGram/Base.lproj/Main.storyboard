@@ -94,7 +94,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U9f-9K-4OB" id="gZ1-M5-kpf">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vTE-bD-GxC" customClass="table">
@@ -141,17 +141,25 @@
                                     <outlet property="delegate" destination="fJv-qP-0ld" id="3mt-s3-Ous"/>
                                 </connections>
                             </tableView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lSy-gM-2eJ">
+                                <rect key="frame" x="125" y="101" width="350" height="350"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="lSy-gM-2eJ" firstAttribute="leading" secondItem="4GC-fk-mHe" secondAttribute="leadingMargin" constant="105" id="0W7-NE-5jF"/>
+                            <constraint firstItem="lSy-gM-2eJ" firstAttribute="top" secondItem="5nO-Gn-QTy" secondAttribute="bottom" constant="37" id="9zT-Co-aDa"/>
                             <constraint firstItem="JIa-UO-BwK" firstAttribute="top" secondItem="fCV-sf-KpU" secondAttribute="bottom" id="Jco-WA-TLG"/>
                             <constraint firstAttribute="trailing" secondItem="fCV-sf-KpU" secondAttribute="trailing" id="X5z-lE-B4T"/>
                             <constraint firstItem="fCV-sf-KpU" firstAttribute="leading" secondItem="4GC-fk-mHe" secondAttribute="leading" id="p8z-KD-hHf"/>
+                            <constraint firstItem="lSy-gM-2eJ" firstAttribute="centerY" secondItem="4GC-fk-mHe" secondAttribute="centerY" id="u7g-v6-i2D"/>
+                            <constraint firstItem="lSy-gM-2eJ" firstAttribute="centerX" secondItem="4GC-fk-mHe" secondAttribute="centerX" id="uU1-F1-RKa"/>
                             <constraint firstItem="fCV-sf-KpU" firstAttribute="top" secondItem="5nO-Gn-QTy" secondAttribute="bottom" constant="413" id="ugK-T9-h54"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zRb-oq-QuL"/>
                     <connections>
+                        <outlet property="imageViewOne" destination="lSy-gM-2eJ" id="BSJ-IL-Le4"/>
                         <outlet property="tableView" destination="fCV-sf-KpU" id="zYm-Z5-CJs"/>
                     </connections>
                 </viewController>
