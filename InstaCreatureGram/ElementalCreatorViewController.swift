@@ -8,18 +8,17 @@
 
 import UIKit
 
-class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    @IBOutlet weak var imageViewOne: UIImageView!
     @IBOutlet var imageView: UIImageView!
-    
-
+    @IBOutlet weak var imageViewOne: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
+    var imagePicker: UIImagePickerController!
+
     var storedOffsets = [Int: CGFloat]()
     
     let filter = CIFilter(name: "CISepiaTone")
-    
     let context = CIContext(options: nil)
     var extent: CGRect!
     var scaleFactor: CGFloat!
@@ -77,6 +76,21 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return image
+    }
+    
+    //TAKE PHOTO FUNCTIONALITY
+    
+    @IBAction func takePhoto(sender: UIBarButtonItem) {
+        imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .Camera
+        
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        imagePicker.dismissViewControllerAnimated(true, completion: nil)
+        imageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
     }
     
     func tableView(tableView: UITableView,

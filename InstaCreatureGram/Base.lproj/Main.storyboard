@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7WX-nL-zqV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7WX-nL-zqV">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -166,7 +166,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Camera" id="SCO-zf-A3s">
                             <connections>
-                                <segue destination="TEM-hf-4y3" kind="presentation" id="Gyv-ci-I0z"/>
+                                <action selector="takePhoto:" destination="fJv-qP-0ld" id="ML1-Bg-gjQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -324,49 +324,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3DJ-w0-dW3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1837" y="798"/>
-        </scene>
-        <!--Camera View Controller-->
-        <scene sceneID="GqD-SP-SxT">
-            <objects>
-                <viewController id="TEM-hf-4y3" customClass="CameraViewController" customModule="InstaCreatureGram" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="dRy-Z2-Ti0"/>
-                        <viewControllerLayoutGuide type="bottom" id="PcZ-Gk-gMz"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="qXe-WN-w3J">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sdS-F6-Neb">
-                                <rect key="frame" x="272" y="550" width="57" height="30"/>
-                                <state key="normal" title="Cheese!"/>
-                                <connections>
-                                    <action selector="takePhoto:" destination="TEM-hf-4y3" eventType="touchUpInside" id="6YY-jK-CPU"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YAE-Pq-5VI">
-                                <rect key="frame" x="45" y="20" width="510" height="510"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="510" id="7ON-L3-a03"/>
-                                    <constraint firstAttribute="width" constant="510" id="NQd-ij-4kz"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="sdS-F6-Neb" firstAttribute="centerX" secondItem="qXe-WN-w3J" secondAttribute="centerX" id="QML-3T-zcU"/>
-                            <constraint firstItem="YAE-Pq-5VI" firstAttribute="top" secondItem="dRy-Z2-Ti0" secondAttribute="bottom" id="XiO-U7-BMq"/>
-                            <constraint firstItem="YAE-Pq-5VI" firstAttribute="centerX" secondItem="qXe-WN-w3J" secondAttribute="centerX" id="cxO-fm-pg7"/>
-                            <constraint firstItem="PcZ-Gk-gMz" firstAttribute="top" secondItem="sdS-F6-Neb" secondAttribute="bottom" constant="20" id="eX6-NG-ypd"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="imageView" destination="YAE-Pq-5VI" id="oZx-66-duq"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1VS-24-kxR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1837" y="1618"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8TN-FJ-Une">
