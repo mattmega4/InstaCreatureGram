@@ -12,15 +12,16 @@
 		325BEC4E1C6734D0004C281C /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325BEC4D1C6734D0004C281C /* UserProfileViewController.swift */; };
 		325BEC501C6734E0004C281C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325BEC4F1C6734E0004C281C /* LoginViewController.swift */; };
 		325BEC521C6734F4004C281C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325BEC511C6734F4004C281C /* SearchViewController.swift */; };
-		8B6405EB1C697E2B00081C13 /* temporary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6405EA1C697E2B00081C13 /* temporary.swift */; };
-		8B6405ED1C697E4D00081C13 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6405EC1C697E4D00081C13 /* TableViewCell.swift */; };
-		8B6405EF1C69808D00081C13 /* ElementalCreatureViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6405EE1C69808D00081C13 /* ElementalCreatureViewController+Extension.swift */; };
+		8B31D12B1C6917F20033BABB /* Temporary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B31D12A1C6917F20033BABB /* Temporary.swift */; };
+		8B31D12D1C691A830033BABB /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B31D12C1C691A830033BABB /* TableViewCell.swift */; };
+		8B31D12F1C691F950033BABB /* ElementalCreatureViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B31D12E1C691F950033BABB /* ElementalCreatureViewController+Extension.swift */; };
 		8BDFFA651C64298500982401 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFA641C64298500982401 /* AppDelegate.swift */; };
 		8BDFFA6A1C64298500982401 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BDFFA681C64298500982401 /* Main.storyboard */; };
 		8BDFFA6D1C64298500982401 /* InstaCreatureGram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFA6B1C64298500982401 /* InstaCreatureGram.xcdatamodeld */; };
 		8BDFFA6F1C64298500982401 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BDFFA6E1C64298500982401 /* Assets.xcassets */; };
 		8BDFFA721C64298500982401 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BDFFA701C64298500982401 /* LaunchScreen.storyboard */; };
 		97E50FF71C692BCF0034B575 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E50FF61C692BCF0034B575 /* CameraViewController.swift */; };
+		97E50FF91C6936B40034B575 /* Terrorblade.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 97E50FF81C6936B40034B575 /* Terrorblade.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,9 +30,9 @@
 		325BEC4D1C6734D0004C281C /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		325BEC4F1C6734E0004C281C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		325BEC511C6734F4004C281C /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		8B6405EA1C697E2B00081C13 /* temporary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = temporary.swift; sourceTree = "<group>"; };
-		8B6405EC1C697E4D00081C13 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		8B6405EE1C69808D00081C13 /* ElementalCreatureViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ElementalCreatureViewController+Extension.swift"; sourceTree = "<group>"; };
+		8B31D12A1C6917F20033BABB /* Temporary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Temporary.swift; sourceTree = "<group>"; };
+		8B31D12C1C691A830033BABB /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		8B31D12E1C691F950033BABB /* ElementalCreatureViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ElementalCreatureViewController+Extension.swift"; sourceTree = "<group>"; };
 		8BDFFA611C64298500982401 /* InstaCreatureGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaCreatureGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BDFFA641C64298500982401 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BDFFA691C64298500982401 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -40,6 +41,7 @@
 		8BDFFA711C64298500982401 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8BDFFA731C64298500982401 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97E50FF61C692BCF0034B575 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		97E50FF81C6936B40034B575 /* Terrorblade.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Terrorblade.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,17 +75,21 @@
 			isa = PBXGroup;
 			children = (
 				325BEC491C673104004C281C /* ElementalCreatorViewController.swift */,
-				8B6405EA1C697E2B00081C13 /* temporary.swift */,
-				8B6405EC1C697E4D00081C13 /* TableViewCell.swift */,
+<<<<<<< HEAD
+				8B31D12E1C691F950033BABB /* ElementalCreatureViewController+Extension.swift */,
+				8B31D12C1C691A830033BABB /* TableViewCell.swift */,
+				8B31D12A1C6917F20033BABB /* Temporary.swift */,
+=======
 				97E50FF61C692BCF0034B575 /* CameraViewController.swift */,
+>>>>>>> master
 				325BEC4A1C673104004C281C /* ElementalFeedViewController.swift */,
 				325BEC4D1C6734D0004C281C /* UserProfileViewController.swift */,
 				325BEC4F1C6734E0004C281C /* LoginViewController.swift */,
 				325BEC511C6734F4004C281C /* SearchViewController.swift */,
 				8BDFFA641C64298500982401 /* AppDelegate.swift */,
 				8BDFFA681C64298500982401 /* Main.storyboard */,
-				8B6405EE1C69808D00081C13 /* ElementalCreatureViewController+Extension.swift */,
 				8BDFFA6E1C64298500982401 /* Assets.xcassets */,
+				97E50FF81C6936B40034B575 /* Terrorblade.jpg */,
 				8BDFFA701C64298500982401 /* LaunchScreen.storyboard */,
 				8BDFFA731C64298500982401 /* Info.plist */,
 				8BDFFA6B1C64298500982401 /* InstaCreatureGram.xcdatamodeld */,
@@ -149,6 +155,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97E50FF91C6936B40034B575 /* Terrorblade.jpg in Resources */,
 				8BDFFA721C64298500982401 /* LaunchScreen.storyboard in Resources */,
 				8BDFFA6F1C64298500982401 /* Assets.xcassets in Resources */,
 				8BDFFA6A1C64298500982401 /* Main.storyboard in Resources */,
@@ -163,14 +170,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				325BEC501C6734E0004C281C /* LoginViewController.swift in Sources */,
-				8B6405EB1C697E2B00081C13 /* temporary.swift in Sources */,
+				8B31D12F1C691F950033BABB /* ElementalCreatureViewController+Extension.swift in Sources */,
 				325BEC521C6734F4004C281C /* SearchViewController.swift in Sources */,
 				325BEC4C1C673104004C281C /* ElementalFeedViewController.swift in Sources */,
+				8B31D12D1C691A830033BABB /* TableViewCell.swift in Sources */,
 				325BEC4E1C6734D0004C281C /* UserProfileViewController.swift in Sources */,
-				8B6405ED1C697E4D00081C13 /* TableViewCell.swift in Sources */,
 				325BEC4B1C673104004C281C /* ElementalCreatorViewController.swift in Sources */,
-				8B6405EF1C69808D00081C13 /* ElementalCreatureViewController+Extension.swift in Sources */,
+<<<<<<< HEAD
+				8B31D12B1C6917F20033BABB /* Temporary.swift in Sources */,
+=======
 				97E50FF71C692BCF0034B575 /* CameraViewController.swift in Sources */,
+>>>>>>> master
 				8BDFFA6D1C64298500982401 /* InstaCreatureGram.xcdatamodeld in Sources */,
 				8BDFFA651C64298500982401 /* AppDelegate.swift in Sources */,
 			);

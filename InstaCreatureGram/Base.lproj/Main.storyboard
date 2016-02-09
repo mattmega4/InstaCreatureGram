@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7WX-nL-zqV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7WX-nL-zqV">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Elemental Feed View Controller-->
@@ -91,17 +92,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Terrorblade.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="CXL-fA-AnL">
-                                <rect key="frame" x="-150" y="64" width="900" height="487"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CXL-fA-AnL">
+                                <rect key="frame" x="0.0" y="64" width="600" height="323"/>
                                 <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hdz-d6-gwb">
+                                <rect key="frame" x="200" y="129" width="200" height="200"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uFN-IS-a6z">
+                                <rect key="frame" x="0.0" y="395" width="600" height="136"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="136" id="G1M-nf-c7A"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellT" id="XXI-vZ-xos" customClass="TableViewCell" customModule="InstaCreatureGram" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XXI-vZ-xos" id="cqu-AS-hBK">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Obc-PV-GoW">
+                                                    <rect key="frame" x="0.0" y="-8" width="600" height="52"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vUK-cV-2ny">
+                                                        <size key="itemSize" width="36" height="36"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="CellC" id="IT5-RZ-IeN">
+                                                            <rect key="frame" x="10" y="8" width="36" height="36"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                                <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            </view>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="fJv-qP-0ld" id="YXg-Jo-CpM"/>
+                                                        <outlet property="delegate" destination="fJv-qP-0ld" id="Jql-tm-eUK"/>
+                                                    </connections>
+                                                </collectionView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="collectionView" destination="Obc-PV-GoW" id="DX8-NI-EgT"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="fJv-qP-0ld" id="wmY-Dn-QIq"/>
+                                    <outlet property="delegate" destination="fJv-qP-0ld" id="DFv-pl-9hJ"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="CXL-fA-AnL" firstAttribute="top" secondItem="5nO-Gn-QTy" secondAttribute="bottom" id="Npw-qQ-njm"/>
-                            <constraint firstAttribute="trailing" secondItem="CXL-fA-AnL" secondAttribute="trailing" id="XAE-9O-2oA"/>
-                            <constraint firstItem="CXL-fA-AnL" firstAttribute="leading" secondItem="4GC-fk-mHe" secondAttribute="leading" id="jAc-DG-1ZE"/>
-                            <constraint firstItem="JIa-UO-BwK" firstAttribute="top" secondItem="CXL-fA-AnL" secondAttribute="bottom" id="mbO-2W-Ztv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="uFN-IS-a6z" secondAttribute="trailing" constant="-20" id="HRA-3t-gOD"/>
+                            <constraint firstItem="uFN-IS-a6z" firstAttribute="leading" secondItem="4GC-fk-mHe" secondAttribute="leadingMargin" constant="-20" id="arn-Fn-8kj"/>
+                            <constraint firstItem="JIa-UO-BwK" firstAttribute="top" secondItem="uFN-IS-a6z" secondAttribute="bottom" constant="20" id="hsE-G0-Itw"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zRb-oq-QuL">
@@ -118,11 +172,13 @@
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="CXL-fA-AnL" id="pgb-kc-YRQ"/>
+                        <outlet property="imageViewOne" destination="Hdz-d6-gwb" id="9Hi-Fj-LTO"/>
+                        <outlet property="tableView" destination="uFN-IS-a6z" id="eUE-1k-cYl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pSz-hp-wIS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1075" y="1188"/>
+            <point key="canvasLocation" x="1075" y="1183"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="jBB-3y-o6y">
@@ -351,7 +407,4 @@
             <point key="canvasLocation" x="263" y="-379"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Terrorblade.jpg" width="900" height="1273"/>
-    </resources>
 </document>
