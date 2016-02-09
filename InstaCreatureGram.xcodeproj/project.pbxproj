@@ -20,7 +20,6 @@
 		8BDFFA6D1C64298500982401 /* InstaCreatureGram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFA6B1C64298500982401 /* InstaCreatureGram.xcdatamodeld */; };
 		8BDFFA6F1C64298500982401 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BDFFA6E1C64298500982401 /* Assets.xcassets */; };
 		8BDFFA721C64298500982401 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BDFFA701C64298500982401 /* LaunchScreen.storyboard */; };
-		97E50FF71C692BCF0034B575 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E50FF61C692BCF0034B575 /* CameraViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +38,6 @@
 		8BDFFA6E1C64298500982401 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8BDFFA711C64298500982401 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8BDFFA731C64298500982401 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		97E50FF61C692BCF0034B575 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +74,6 @@
 				8B6405EE1C69808D00081C13 /* ElementalCreatureViewController+Extension.swift */,
 				8B6405EC1C697E4D00081C13 /* TableViewCell.swift */,
 				8B4827C51C69D57E00E0A868 /* CreatorRowCreator.swift */,
-				97E50FF61C692BCF0034B575 /* CameraViewController.swift */,
 				325BEC4A1C673104004C281C /* ElementalFeedViewController.swift */,
 				325BEC4D1C6734D0004C281C /* UserProfileViewController.swift */,
 				325BEC4F1C6734E0004C281C /* LoginViewController.swift */,
@@ -170,7 +167,6 @@
 				8B6405ED1C697E4D00081C13 /* TableViewCell.swift in Sources */,
 				325BEC4B1C673104004C281C /* ElementalCreatorViewController.swift in Sources */,
 				8B6405EF1C69808D00081C13 /* ElementalCreatureViewController+Extension.swift in Sources */,
-				97E50FF71C692BCF0034B575 /* CameraViewController.swift in Sources */,
 				8BDFFA6D1C64298500982401 /* InstaCreatureGram.xcdatamodeld in Sources */,
 				8BDFFA651C64298500982401 /* AppDelegate.swift in Sources */,
 			);
