@@ -107,7 +107,6 @@ class ElementalFeedViewController: UIViewController, UITableViewDataSource, UITa
     
     
     //OPEN PHOTO LIBRARY FUNCTIONALITY
-    //Not yet hooked up to Storyboard button
     @IBAction func openPhotoLibrary(sender: UIBarButtonItem) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
             let imagePicker = UIImagePickerController()
