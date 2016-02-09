@@ -96,7 +96,7 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="323"/>
                                 <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hdz-d6-gwb">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hdz-d6-gwb">
                                 <rect key="frame" x="200" y="129" width="200" height="200"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uFN-IS-a6z">
@@ -172,7 +172,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="CXL-fA-AnL" id="pgb-kc-YRQ"/>
-                        <outlet property="imageViewOne" destination="Hdz-d6-gwb" id="9Hi-Fj-LTO"/>
+                        <outlet property="imageViewOne" destination="Hdz-d6-gwb" id="XyV-OD-fYK"/>
                         <outlet property="tableView" destination="uFN-IS-a6z" id="eUE-1k-cYl"/>
                     </connections>
                 </viewController>

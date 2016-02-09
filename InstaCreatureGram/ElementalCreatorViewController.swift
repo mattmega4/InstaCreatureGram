@@ -10,9 +10,10 @@ import UIKit
 
 class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var imageViewOne: UIImageView!
     @IBOutlet var imageView: UIImageView!
     
-    @IBOutlet weak var imageViewOne: UIImageView!
+
     @IBOutlet weak var tableView: UITableView!
     
     var storedOffsets = [Int: CGFloat]()
@@ -25,6 +26,8 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
     
     var topArr: [UIImage]!
     
+//    let model: [[UIImage]] = generateRandomData()
+    
     
     
     override func viewDidLoad() {
@@ -33,6 +36,10 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
         tableView.delegate = self
         
         topArr = [
+            UIImage(named: "top1.png")!,
+            UIImage(named: "top1.png")!,
+            UIImage(named: "top1.png")!,
+            UIImage(named: "top1.png")!,
             UIImage(named: "top1.png")!,
             UIImage(named: "top2.png")!,
             UIImage(named: "top3.png")!,
@@ -105,19 +112,6 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
             storedOffsets[indexPath.row] = tableViewCell.collectionViewOffset
     }
     
-    
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        
-        let cell = collectionView.cellForItemAtIndexPath(indexPath)!
-        let color = cell.backgroundColor
-        self.imageViewOne.backgroundColor = color
-        //this needs to be adjusted
-        
-        
 
-        
-        
-        
-    }
     
 }
