@@ -8,28 +8,46 @@
 
 import UIKit
 
-class UserProfileViewController: UIViewController {
+class UserProfileViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    
+    var gridArr: [UIImage]!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        gridArr = [
+            UIImage(named: "top1.png")!,
+            UIImage(named: "top2.png")!,
+            UIImage(named: "top3.png")!,
+            UIImage(named: "top4.png")!,
+            UIImage(named: "top5.png")!,
+            UIImage(named: "top6.png")!,
+            UIImage(named: "top7.png")!,
+            UIImage(named: "top8.png")!,
+            UIImage(named: "top9.png")!,
+            UIImage(named: "top10.png")!
+        ]
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return gridArr.count
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CellCV",
+            forIndexPath: indexPath)
+        
+        cell.backgroundView = UIImageView.init(image: gridArr[indexPath.item])
+        
+        return cell
     }
-    */
+
+
 
 }
