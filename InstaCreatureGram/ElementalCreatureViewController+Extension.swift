@@ -49,9 +49,22 @@ extension ElementalCreatorViewController: UICollectionViewDelegate, UICollection
 //        let color = cell.contentView
 //        imageViewOne.addSubview(color)
 //        print("\(color)")
-        let view = cell.backgroundView as! UIImageView
-        let image = view.image!
-        self.imageViewOne.image = image
+
+        
+        
+        if collectionView.tag == 0 {
+            
+            let view = cell.backgroundView as! UIImageView
+            let image = view.image!
+            self.imageViewOne.image = image
+            
+        } else if (collectionView.tag == 1) {
+            
+            let view = cell.backgroundView as! UIImageView
+            let image = view.image!
+            self.imageViewTwo.image = image
+        }
+        
         
     }
     

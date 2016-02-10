@@ -96,8 +96,12 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="323"/>
                                 <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hdz-d6-gwb">
-                                <rect key="frame" x="200" y="129" width="200" height="200"/>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hdz-d6-gwb">
+                                <rect key="frame" x="30" y="176" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="GTb-Q7-XPV"/>
+                                    <constraint firstAttribute="width" constant="200" id="d9S-O1-Vi7"/>
+                                </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uFN-IS-a6z">
                                 <rect key="frame" x="0.0" y="395" width="600" height="136"/>
@@ -158,10 +162,23 @@
                                     <outlet property="delegate" destination="fJv-qP-0ld" id="DFv-pl-9hJ"/>
                                 </connections>
                             </tableView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GMU-1o-am5">
+                                <rect key="frame" x="369" y="176" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="HJc-c8-Z40"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="KPq-Ag-TGw"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="TnD-yp-R3E"/>
+                                    <constraint firstAttribute="width" constant="200" id="pu9-3C-ScN"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="GMU-1o-am5" firstAttribute="centerX" secondItem="4GC-fk-mHe" secondAttribute="centerX" constant="169" id="2g3-Ux-pga"/>
+                            <constraint firstItem="Hdz-d6-gwb" firstAttribute="centerY" secondItem="4GC-fk-mHe" secondAttribute="centerY" id="4tv-0r-Hsm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="uFN-IS-a6z" secondAttribute="trailing" constant="-20" id="HRA-3t-gOD"/>
+                            <constraint firstItem="GMU-1o-am5" firstAttribute="centerY" secondItem="4GC-fk-mHe" secondAttribute="centerY" id="L4Q-dL-OYp"/>
+                            <constraint firstItem="Hdz-d6-gwb" firstAttribute="centerX" secondItem="4GC-fk-mHe" secondAttribute="centerX" constant="-170" id="UEm-ia-ApK"/>
                             <constraint firstItem="uFN-IS-a6z" firstAttribute="leading" secondItem="4GC-fk-mHe" secondAttribute="leadingMargin" constant="-20" id="arn-Fn-8kj"/>
                             <constraint firstItem="JIa-UO-BwK" firstAttribute="top" secondItem="uFN-IS-a6z" secondAttribute="bottom" constant="20" id="hsE-G0-Itw"/>
                         </constraints>
@@ -181,6 +198,7 @@
                     <connections>
                         <outlet property="imageView" destination="CXL-fA-AnL" id="pgb-kc-YRQ"/>
                         <outlet property="imageViewOne" destination="Hdz-d6-gwb" id="XyV-OD-fYK"/>
+                        <outlet property="imageViewTwo" destination="GMU-1o-am5" id="2PK-lY-K8z"/>
                         <outlet property="tableView" destination="uFN-IS-a6z" id="eUE-1k-cYl"/>
                     </connections>
                 </viewController>

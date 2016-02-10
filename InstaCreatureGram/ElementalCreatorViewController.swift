@@ -14,6 +14,7 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
     @IBOutlet weak var imageViewOne: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var imageViewTwo: UIImageView!
     var imagePicker: UIImagePickerController!
 
     var storedOffsets = [Int: CGFloat]()
@@ -38,6 +39,7 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
         super.viewDidLoad()
         
         imageViewOne.userInteractionEnabled = true
+        imageViewTwo.userInteractionEnabled = true
  
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "tap:")
@@ -52,11 +54,30 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
         let rotationGestureRecognizer = UIRotationGestureRecognizer(target: self, action: "rotate:")
         
         
+        
+        let tapGestureRecognizer1 = UITapGestureRecognizer(target: self, action: "tap1:")
+        tapGestureRecognizer1.numberOfTapsRequired = 2
+        
+        let pinchGestureRecognizer1 = UIPinchGestureRecognizer(target: self, action: "pinch1:")
+        
+        let panGestureRecognizer1 = UIPanGestureRecognizer(target: self, action: "pan1:")
+        panGestureRecognizer1.minimumNumberOfTouches = 1
+        panGestureRecognizer1.maximumNumberOfTouches = 2
+        
+        let rotationGestureRecognizer1 = UIRotationGestureRecognizer(target: self, action: "rotate1:")
+        
+        
         imageViewOne.userInteractionEnabled = true
         imageViewOne.addGestureRecognizer(tapGestureRecognizer)
         imageViewOne.addGestureRecognizer(pinchGestureRecognizer)
         imageViewOne.addGestureRecognizer(panGestureRecognizer)
         imageViewOne.addGestureRecognizer(rotationGestureRecognizer)
+        
+        imageViewTwo.userInteractionEnabled = true
+        imageViewTwo.addGestureRecognizer(tapGestureRecognizer1)
+        imageViewTwo.addGestureRecognizer(pinchGestureRecognizer1)
+        imageViewTwo.addGestureRecognizer(panGestureRecognizer1)
+        imageViewTwo.addGestureRecognizer(rotationGestureRecognizer1)
 
         
         tableView.delegate = self
@@ -110,7 +131,10 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     func tap(gestureRecognizer: UITapGestureRecognizer) {
+       
+    
         var frame = imageViewOne.frame
+
         if (!expanded) {
             frame.size.height = frame.size.height * 2
             frame.size.width = frame.size.width * 2
@@ -122,6 +146,8 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
         }
         
         imageViewOne.frame = frame
+        
+        
     }
     
     func pinch(gestureRecognizer: UIPinchGestureRecognizer) {
@@ -142,6 +168,56 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
     func rotate(gestureRecognizer: UIRotationGestureRecognizer) {
         if gestureRecognizer.state == UIGestureRecognizerState.Began || gestureRecognizer.state == UIGestureRecognizerState.Changed {
             imageViewOne.transform = CGAffineTransformRotate(imageViewOne.transform, gestureRecognizer.rotation)
+            gestureRecognizer.rotation = 0
+        }
+    }
+    
+    
+    
+    
+    
+    
+    func tap1(gestureRecognizer: UITapGestureRecognizer) {
+        
+        
+        var frame = imageViewTwo.frame
+        
+        
+        
+        
+        if (!expanded) {
+            frame.size.height = frame.size.height * 2
+            frame.size.width = frame.size.width * 2
+            expanded = true
+        } else {
+            frame.size.height = frame.size.height / 2
+            frame.size.width = frame.size.width / 2
+            expanded = false
+        }
+        
+        imageViewTwo.frame = frame
+        
+        
+    }
+    
+    func pinch1(gestureRecognizer: UIPinchGestureRecognizer) {
+        if gestureRecognizer.state == UIGestureRecognizerState.Began || gestureRecognizer.state == UIGestureRecognizerState.Changed {
+            imageViewTwo.transform = CGAffineTransformScale(imageViewTwo.transform, gestureRecognizer.scale, gestureRecognizer.scale)
+            gestureRecognizer.scale = 1
+        }
+    }
+    
+    func pan1(gestureRecognizer: UIPanGestureRecognizer) {
+        if gestureRecognizer.state == UIGestureRecognizerState.Began || gestureRecognizer.state == UIGestureRecognizerState.Changed {
+            let translation = gestureRecognizer.translationInView(imageViewTwo.superview!)
+            imageViewTwo.center = CGPointMake(imageViewTwo.center.x + translation.x, imageViewTwo.center.y + translation.y)
+            gestureRecognizer.setTranslation(CGPointZero, inView: imageViewTwo.superview)
+        }
+    }
+    
+    func rotate1(gestureRecognizer: UIRotationGestureRecognizer) {
+        if gestureRecognizer.state == UIGestureRecognizerState.Began || gestureRecognizer.state == UIGestureRecognizerState.Changed {
+            imageViewTwo.transform = CGAffineTransformRotate(imageViewTwo.transform, gestureRecognizer.rotation)
             gestureRecognizer.rotation = 0
         }
     }
