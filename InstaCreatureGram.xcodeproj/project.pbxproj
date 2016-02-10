@@ -12,6 +12,10 @@
 		325BEC4E1C6734D0004C281C /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325BEC4D1C6734D0004C281C /* UserProfileViewController.swift */; };
 		325BEC501C6734E0004C281C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325BEC4F1C6734E0004C281C /* LoginViewController.swift */; };
 		325BEC521C6734F4004C281C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325BEC511C6734F4004C281C /* SearchViewController.swift */; };
+		326B964F1C691B52009DBA16 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326B964E1C691B52009DBA16 /* User.swift */; };
+		326B96521C691B96009DBA16 /* BridgeHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 326B96511C691B96009DBA16 /* BridgeHeader.m */; };
+		326B96541C692100009DBA16 /* Creature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326B96531C692100009DBA16 /* Creature.swift */; };
+		326B96561C698297009DBA16 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326B96551C698297009DBA16 /* Comment.swift */; };
 		8B4827C61C69D57E00E0A868 /* CreatorRowCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4827C51C69D57E00E0A868 /* CreatorRowCreator.swift */; };
 		8B6405ED1C697E4D00081C13 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6405EC1C697E4D00081C13 /* TableViewCell.swift */; };
 		8B6405EF1C69808D00081C13 /* ElementalCreatureViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6405EE1C69808D00081C13 /* ElementalCreatureViewController+Extension.swift */; };
@@ -20,6 +24,7 @@
 		8BDFFA6D1C64298500982401 /* InstaCreatureGram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFA6B1C64298500982401 /* InstaCreatureGram.xcdatamodeld */; };
 		8BDFFA6F1C64298500982401 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BDFFA6E1C64298500982401 /* Assets.xcassets */; };
 		8BDFFA721C64298500982401 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BDFFA701C64298500982401 /* LaunchScreen.storyboard */; };
+		BAB3B0927EC7C874F44A9FB2 /* libPods-InstaCreatureGram.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF46C81AB2763E7E8A095F32 /* libPods-InstaCreatureGram.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,12 @@
 		325BEC4D1C6734D0004C281C /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		325BEC4F1C6734E0004C281C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		325BEC511C6734F4004C281C /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		326B964E1C691B52009DBA16 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		326B96501C691B96009DBA16 /* InstaCreatureGram-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InstaCreatureGram-Bridging-Header.h"; sourceTree = "<group>"; };
+		326B96511C691B96009DBA16 /* BridgeHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BridgeHeader.m; sourceTree = "<group>"; };
+		326B96531C692100009DBA16 /* Creature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Creature.swift; sourceTree = "<group>"; };
+		326B96551C698297009DBA16 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		4C474670D2F268AD52155969 /* Pods-InstaCreatureGram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaCreatureGram.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstaCreatureGram/Pods-InstaCreatureGram.release.xcconfig"; sourceTree = "<group>"; };
 		8B4827C51C69D57E00E0A868 /* CreatorRowCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorRowCreator.swift; sourceTree = "<group>"; };
 		8B6405EC1C697E4D00081C13 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		8B6405EE1C69808D00081C13 /* ElementalCreatureViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ElementalCreatureViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -38,6 +49,8 @@
 		8BDFFA6E1C64298500982401 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8BDFFA711C64298500982401 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8BDFFA731C64298500982401 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF46C81AB2763E7E8A095F32 /* libPods-InstaCreatureGram.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InstaCreatureGram.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4D5D0F2942B17A6DF11B01D /* Pods-InstaCreatureGram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaCreatureGram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstaCreatureGram/Pods-InstaCreatureGram.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +58,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAB3B0927EC7C874F44A9FB2 /* libPods-InstaCreatureGram.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41C7D09CAA8555ECCC3660CE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D4D5D0F2942B17A6DF11B01D /* Pods-InstaCreatureGram.debug.xcconfig */,
+				4C474670D2F268AD52155969 /* Pods-InstaCreatureGram.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8BDFFA581C64298500982401 = {
 			isa = PBXGroup;
 			children = (
 				8BDFFA631C64298500982401 /* InstaCreatureGram */,
 				8BDFFA621C64298500982401 /* Products */,
+				41C7D09CAA8555ECCC3660CE /* Pods */,
+				9435735A0703DDC3A90108D7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,8 +109,21 @@
 				8BDFFA701C64298500982401 /* LaunchScreen.storyboard */,
 				8BDFFA731C64298500982401 /* Info.plist */,
 				8BDFFA6B1C64298500982401 /* InstaCreatureGram.xcdatamodeld */,
+				326B964E1C691B52009DBA16 /* User.swift */,
+				326B96531C692100009DBA16 /* Creature.swift */,
+				326B96551C698297009DBA16 /* Comment.swift */,
+				326B96511C691B96009DBA16 /* BridgeHeader.m */,
+				326B96501C691B96009DBA16 /* InstaCreatureGram-Bridging-Header.h */,
 			);
 			path = InstaCreatureGram;
+			sourceTree = "<group>";
+		};
+		9435735A0703DDC3A90108D7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF46C81AB2763E7E8A095F32 /* libPods-InstaCreatureGram.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,9 +133,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8BDFFA761C64298500982401 /* Build configuration list for PBXNativeTarget "InstaCreatureGram" */;
 			buildPhases = (
+				715E649E59529CF3C3C08DF1 /* Check Pods Manifest.lock */,
 				8BDFFA5D1C64298500982401 /* Sources */,
 				8BDFFA5E1C64298500982401 /* Frameworks */,
 				8BDFFA5F1C64298500982401 /* Resources */,
+				E101C92AB904983A6E53EA7F /* Embed Pods Frameworks */,
+				0B7EECFF1B26B2AC57C1019A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -154,6 +195,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0B7EECFF1B26B2AC57C1019A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InstaCreatureGram/Pods-InstaCreatureGram-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		715E649E59529CF3C3C08DF1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E101C92AB904983A6E53EA7F /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InstaCreatureGram/Pods-InstaCreatureGram-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8BDFFA5D1C64298500982401 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -161,13 +250,17 @@
 			files = (
 				8B4827C61C69D57E00E0A868 /* CreatorRowCreator.swift in Sources */,
 				325BEC501C6734E0004C281C /* LoginViewController.swift in Sources */,
+				326B96521C691B96009DBA16 /* BridgeHeader.m in Sources */,
 				325BEC521C6734F4004C281C /* SearchViewController.swift in Sources */,
 				325BEC4C1C673104004C281C /* ElementalFeedViewController.swift in Sources */,
 				325BEC4E1C6734D0004C281C /* UserProfileViewController.swift in Sources */,
+				326B964F1C691B52009DBA16 /* User.swift in Sources */,
 				8B6405ED1C697E4D00081C13 /* TableViewCell.swift in Sources */,
 				325BEC4B1C673104004C281C /* ElementalCreatorViewController.swift in Sources */,
 				8B6405EF1C69808D00081C13 /* ElementalCreatureViewController+Extension.swift in Sources */,
 				8BDFFA6D1C64298500982401 /* InstaCreatureGram.xcdatamodeld in Sources */,
+				326B96541C692100009DBA16 /* Creature.swift in Sources */,
+				326B96561C698297009DBA16 /* Comment.swift in Sources */,
 				8BDFFA651C64298500982401 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,23 +370,30 @@
 		};
 		8BDFFA771C64298500982401 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4D5D0F2942B17A6DF11B01D /* Pods-InstaCreatureGram.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = InstaCreatureGram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.InstaCreatureGram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "InstaCreatureGram/InstaCreatureGram-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		8BDFFA781C64298500982401 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C474670D2F268AD52155969 /* Pods-InstaCreatureGram.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = InstaCreatureGram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.InstaCreatureGram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "InstaCreatureGram/InstaCreatureGram-Bridging-Header.h";
 			};
 			name = Release;
 		};

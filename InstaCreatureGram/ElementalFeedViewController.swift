@@ -30,15 +30,13 @@ class ElementalFeedViewController: UIViewController, UITableViewDataSource, UITa
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
       
         let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell")!
-        
-        
         
         cell.imageView!.image = self.sampleArray[indexPath.section]
         
