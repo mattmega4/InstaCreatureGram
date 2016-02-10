@@ -35,6 +35,8 @@ extension ElementalCreatorViewController: UICollectionViewDelegate, UICollection
                 cell.backgroundView = UIImageView.init(image: topArr[indexPath.item])
             } else if (collectionView.tag == 1) {
                 cell.backgroundView = UIImageView.init(image: midArr[indexPath.item])
+            } else if (collectionView.tag == 2) {
+                cell.backgroundView = UIImageView.init(image: botArr[indexPath.item])
             }
             
             
@@ -63,6 +65,12 @@ extension ElementalCreatorViewController: UICollectionViewDelegate, UICollection
             let view = cell.backgroundView as! UIImageView
             let image = view.image!
             self.imageViewTwo.image = image
+            
+        } else if (collectionView.tag == 2) {
+            
+            let view = cell.backgroundView as! UIImageView
+            let image = view.image!
+            self.imageViewThree.image = image
         }
         
         
