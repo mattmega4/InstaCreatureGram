@@ -15,8 +15,8 @@ class Creature: NSObject {
     
     
     func createNewCreature(image: UIImage) {
-        self.image = image
-//        self.image = UIImage(named: "logo1.png")!
+//        self.image = image
+        self.image = UIImage(named: "logo1.png")!
         let imageData:NSData = UIImagePNGRepresentation(self.image)!
         let imageString = imageData.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
         let allPosts = myRootRef.childByAppendingPath("posts")
@@ -26,13 +26,11 @@ class Creature: NSObject {
         let postLikes = posts.childByAppendingPath("likes")
         let postUser = posts.childByAppendingPath("user")
         postUser.setValue(String(UID))
-        postLikes.setValue("0")
+        postLikes.setValue(0)
         postImage.setValue(imageString)
         postTimeStamp.setValue(FirebaseServerValue.timestamp())
         
-//        posts.queryLimitedToLast(1).observeEventType(.ChildAdded, withBlock: { snapshot in
-//            self.createNewComments(snapshot.key, comment: "test test test")
-//        })
+        createNewComments("-KA8NHzyO85nNZb9KUUw", comment: "test test test")
     }
     
     func createNewComments(postID: String, comment:String) {
@@ -40,21 +38,21 @@ class Creature: NSObject {
         let commentsForPost = allComments.childByAppendingPath(postID)
         let newComment = commentsForPost.childByAppendingPath("content")
         newComment.setValue(comment)
-//        likeCreature()
-//        print("here")
+        likeCreature("-KA8NHzyO85nNZb9KUUw")
+        print("created comment")
     }
     
     func likeCreature(postID: String) {
 //        let postID = "-KA7Z9hSx2T34aTQQy_U"
         let postLikes = myRootRef.childByAppendingPath("posts").childByAppendingPath(postID).childByAppendingPath("likes")
-        var currentLikes = NSString()
+        var currentLikes = NSNumber()
         postLikes.observeEventType(.Value, withBlock: { snapshot in
-            currentLikes = snapshot.value as! NSString
+            currentLikes = snapshot.value as! NSNumber
+            let newLikes = Int(currentLikes) + 1
+            postLikes.setValue(newLikes)
             }, withCancelBlock: { error in
                 print(error.description)
         })
-//        currentLikes++
-        postLikes.setValue(currentLikes)
     }
     
 }
