@@ -10,7 +10,7 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
 
-    
+    var whichCell: Int!
     @IBOutlet weak var collectionView: UICollectionView!
     
     var collectionViewOffset: CGFloat {
