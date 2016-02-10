@@ -14,11 +14,13 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
     @IBOutlet var imageView: UIImageView!
     @IBOutlet weak var imageViewOne: UIImageView!
     @IBOutlet weak var imageViewTwo: UIImageView!
+    @IBOutlet weak var imageViewThree: UIImageView!
     
     var imagePicker: UIImagePickerController!
     var storedOffsets = [Int: CGFloat]()
     var topArr: [UIImage]!
     var midArr: [UIImage]!
+    var botArr: [UIImage]!
     
 //create an array of array
     var combinedArr : [[UIImage]]?
@@ -33,6 +35,7 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
         
         imageViewOne.userInteractionEnabled = true
         imageViewTwo.userInteractionEnabled = true
+        imageViewThree.userInteractionEnabled = true
  
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "tap:")
@@ -60,6 +63,20 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
         let rotationGestureRecognizer1 = UIRotationGestureRecognizer(target: self, action: "rotate1:")
         
         
+        
+        
+        let tapGestureRecognizer2 = UITapGestureRecognizer(target: self, action: "tap2:")
+        tapGestureRecognizer2.numberOfTapsRequired = 2
+        
+        let pinchGestureRecognizer2 = UIPinchGestureRecognizer(target: self, action: "pinch2:")
+        
+        let panGestureRecognizer2 = UIPanGestureRecognizer(target: self, action: "pan2:")
+        panGestureRecognizer2.minimumNumberOfTouches = 1
+        panGestureRecognizer2.maximumNumberOfTouches = 2
+        
+        let rotationGestureRecognizer2 = UIRotationGestureRecognizer(target: self, action: "rotate2:")
+        
+        
         imageViewOne.userInteractionEnabled = true
         imageViewOne.addGestureRecognizer(tapGestureRecognizer)
         imageViewOne.addGestureRecognizer(pinchGestureRecognizer)
@@ -71,6 +88,12 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
         imageViewTwo.addGestureRecognizer(pinchGestureRecognizer1)
         imageViewTwo.addGestureRecognizer(panGestureRecognizer1)
         imageViewTwo.addGestureRecognizer(rotationGestureRecognizer1)
+        
+        imageViewThree.userInteractionEnabled = true
+        imageViewThree.addGestureRecognizer(tapGestureRecognizer2)
+        imageViewThree.addGestureRecognizer(pinchGestureRecognizer2)
+        imageViewThree.addGestureRecognizer(panGestureRecognizer2)
+        imageViewThree.addGestureRecognizer(rotationGestureRecognizer2)
 
         
         tableView.delegate = self
@@ -107,10 +130,28 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
             UIImage(named: "mid16.jpg")!
         ]
         
-        self.combinedArr = [topArr, midArr]
+        botArr = [
+            UIImage(named: "mid1.jpg")!,
+            UIImage(named: "mid2.jpg")!,
+            UIImage(named: "mid3.jpg")!,
+            UIImage(named: "mid4.jpg")!,
+            UIImage(named: "mid5.jpg")!,
+            UIImage(named: "mid6.jpg")!,
+            UIImage(named: "mid7.jpg")!,
+            UIImage(named: "mid8.jpg")!,
+            UIImage(named: "mid9.jpg")!,
+            UIImage(named: "mid10.jpg")!,
+            UIImage(named: "mid11.jpg")!,
+            UIImage(named: "mid12.jpg")!,
+            UIImage(named: "mid13.jpg")!,
+            UIImage(named: "mid14.jpg")!,
+            UIImage(named: "mid15.jpg")!,
+            UIImage(named: "mid16.jpg")!
+        ]
         
-//        combinedArr[0]
-//        combinedArr[1]
+        self.combinedArr = [topArr, midArr, botArr]
+        
+
 }
     
     //IMAGE FILTER FUNCTIONALITY
@@ -223,6 +264,51 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
             gestureRecognizer.rotation = 0
         }
     }
+    
+
+    
+    func tap2(gestureRecognizer: UITapGestureRecognizer) {
+        
+        
+        var frame = imageViewThree.frame
+
+        if (!expanded) {
+            frame.size.height = frame.size.height * 2
+            frame.size.width = frame.size.width * 2
+            expanded = true
+        } else {
+            frame.size.height = frame.size.height / 2
+            frame.size.width = frame.size.width / 2
+            expanded = false
+        }
+        
+        imageViewThree.frame = frame
+        
+        
+    }
+    
+    func pinch2(gestureRecognizer: UIPinchGestureRecognizer) {
+        if gestureRecognizer.state == UIGestureRecognizerState.Began || gestureRecognizer.state == UIGestureRecognizerState.Changed {
+            imageViewThree.transform = CGAffineTransformScale(imageViewThree.transform, gestureRecognizer.scale, gestureRecognizer.scale)
+            gestureRecognizer.scale = 1
+        }
+    }
+    
+    func pan2(gestureRecognizer: UIPanGestureRecognizer) {
+        if gestureRecognizer.state == UIGestureRecognizerState.Began || gestureRecognizer.state == UIGestureRecognizerState.Changed {
+            let translation = gestureRecognizer.translationInView(imageViewThree.superview!)
+            imageViewThree.center = CGPointMake(imageViewThree.center.x + translation.x, imageViewThree.center.y + translation.y)
+            gestureRecognizer.setTranslation(CGPointZero, inView: imageViewThree.superview)
+        }
+    }
+    
+    func rotate2(gestureRecognizer: UIRotationGestureRecognizer) {
+        if gestureRecognizer.state == UIGestureRecognizerState.Began || gestureRecognizer.state == UIGestureRecognizerState.Changed {
+            imageViewThree.transform = CGAffineTransformRotate(imageViewThree.transform, gestureRecognizer.rotation)
+            gestureRecognizer.rotation = 0
+        }
+    }
+    
     
     
     
