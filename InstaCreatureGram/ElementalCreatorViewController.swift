@@ -10,20 +10,13 @@ import UIKit
 
 class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
     
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet var imageView: UIImageView!
     @IBOutlet weak var imageViewOne: UIImageView!
-    @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var imageViewTwo: UIImageView!
+    
     var imagePicker: UIImagePickerController!
-
     var storedOffsets = [Int: CGFloat]()
-    
-    let filter = CIFilter(name: "CISepiaTone")
-    let context = CIContext(options: nil)
-    var extent: CGRect!
-    var scaleFactor: CGFloat!
-    
     var topArr: [UIImage]!
     var midArr: [UIImage]!
     
@@ -118,16 +111,25 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
         
 //        combinedArr[0]
 //        combinedArr[1]
-        //IMAGE FILTER FUNCTIONALITY
-        //        scaleFactor = UIScreen.mainScreen().scale
-        //        extent = CGRectApplyAffineTransform(UIScreen.mainScreen().bounds, CGAffineTransformMakeScale(scaleFactor, scaleFactor))
-        //
-        ////        let ciImage = CIImage(image: imageView.image!)
-        //
-        //        filter?.setDefaults()
-        ////        filter?.setValue(ciImage, forKey: kCIInputImageKey)
-        //
-        //        imageView.image = UIImage(CGImage: context.createCGImage((filter?.outputImage)!, fromRect: extent))
+}
+    
+    //IMAGE FILTER FUNCTIONALITY
+    
+    private func applyFilterToImage(image : CIImage) -> CIImage {
+        let filter = CIFilter(name: "CIPhotoEffectNoir")
+        filter?.setDefaults()
+        filter?.setValue(image, forKey: kCIInputImageKey)
+        return (filter?.outputImage)!
+    }
+    
+    @IBAction func filterPicture(sender: UIBarButtonItem) {
+        
+        if let image = imageView.image {
+            let originalImage = CIImage(image: image)
+            let outputImage = applyFilterToImage(originalImage!)
+            let newImage = CIContext(options: nil).createCGImage(outputImage, fromRect: CGRect(origin: CGPoint(x: 0, y: 0 ), size: CGSize(width: image.size.height, height: image.size.width)))
+            imageView.image = UIImage(CGImage: newImage, scale: image.scale, orientation: image.imageOrientation)
+        }
     }
     
     func tap(gestureRecognizer: UITapGestureRecognizer) {
@@ -232,6 +234,7 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
 
     
     //SCREENSHOT FUNCTIONALITY
+    
     @IBAction func screenShot(sender: AnyObject) {
         let image = takeScreenshot()
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
@@ -293,7 +296,5 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
             
             storedOffsets[indexPath.row] = tableViewCell.collectionViewOffset
     }
-    
-
     
 }
