@@ -107,6 +107,7 @@ class ElementalFeedViewController: UIViewController, UITableViewDataSource, UITa
     
     
     //OPEN PHOTO LIBRARY FUNCTIONALITY
+    
     @IBAction func openPhotoLibrary(sender: UIBarButtonItem) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
             let imagePicker = UIImagePickerController()
@@ -117,6 +118,5 @@ class ElementalFeedViewController: UIViewController, UITableViewDataSource, UITa
         }
         
     }
-
 
 }

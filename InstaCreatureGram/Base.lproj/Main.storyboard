@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7WX-nL-zqV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7WX-nL-zqV">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Elemental Feed View Controller-->
@@ -189,11 +190,18 @@
                                 <action selector="screenShot:" destination="fJv-qP-0ld" id="ni6-FJ-ocg"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Camera" id="SCO-zf-A3s">
-                            <connections>
-                                <action selector="takePhoto:" destination="fJv-qP-0ld" id="ML1-Bg-gjQ"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Camera" id="SCO-zf-A3s">
+                                <connections>
+                                    <action selector="takePhoto:" destination="fJv-qP-0ld" id="ML1-Bg-gjQ"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Filter" id="38H-t7-PAb">
+                                <connections>
+                                    <action selector="filterPicture:" destination="fJv-qP-0ld" id="QhF-BA-FWM"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="CXL-fA-AnL" id="pgb-kc-YRQ"/>
