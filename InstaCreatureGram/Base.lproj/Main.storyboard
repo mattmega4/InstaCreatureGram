@@ -56,7 +56,7 @@
                                 <state key="normal" title="login"/>
                                 <connections>
                                     <action selector="onLoginButtonTapped:" destination="7WX-nL-zqV" eventType="touchUpInside" id="C9g-U4-fax"/>
-                                    <segue destination="P0a-QX-QZg" kind="show" identifier="" id="3xs-GI-8Qe"/>
+                                    <segue destination="P0a-QX-QZg" kind="show" identifier="login" id="3xs-GI-8Qe"/>
                                 </connections>
                             </button>
                         </subviews>

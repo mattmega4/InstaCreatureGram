@@ -29,8 +29,8 @@ class Creature: NSObject {
         postLikes.setValue(0)
         postImage.setValue(imageString)
         postTimeStamp.setValue(FirebaseServerValue.timestamp())
-        
-        createNewComments("-KA8NHzyO85nNZb9KUUw", comment: "test test test")
+        print("created creature")
+        createNewComments("-KA94y1MmrUhoQQfOsu9", comment: "test test test")
     }
     
     func createNewComments(postID: String, comment:String) {
@@ -38,20 +38,39 @@ class Creature: NSObject {
         let commentsForPost = allComments.childByAppendingPath(postID)
         let newComment = commentsForPost.childByAppendingPath("content")
         newComment.setValue(comment)
-        likeCreature("-KA8NHzyO85nNZb9KUUw")
+        likeCreature("-KA94y1MmrUhoQQfOsu9")
         print("created comment")
     }
     
     func likeCreature(postID: String) {
-//        let postID = "-KA7Z9hSx2T34aTQQy_U"
         let postLikes = myRootRef.childByAppendingPath("posts").childByAppendingPath(postID).childByAppendingPath("likes")
+        
         var currentLikes = NSNumber()
-        postLikes.observeEventType(.Value, withBlock: { snapshot in
-            currentLikes = snapshot.value as! NSNumber
-            let newLikes = Int(currentLikes) + 1
-            postLikes.setValue(newLikes)
-            }, withCancelBlock: { error in
-                print(error.description)
+//        postLikes.observeEventType(.Value, withBlock: { snapshot in
+//            currentLikes = snapshot.value as! NSNumber
+//            }, withCancelBlock: { error in
+//                print(error.description)
+//        })
+        let urlString = String(format: "%@.json", postLikes.description)
+        let url = NSURL(string: urlString)
+        let session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithURL(url!) { (data, response, error) -> Void in
+            do {
+               currentLikes = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! NSNumber
+                let newLikes = Int(currentLikes) + 1
+                postLikes.setValue(newLikes)
+                print("liked comment")
+            }catch let error as NSError {
+                print("error"+error.localizedDescription)
+            }
+        }
+        task.resume()
+    }
+    
+    func getAllPostsForUser(userID: String) {
+        let posts = myRootRef.childByAppendingPath("posts")
+        posts.queryEqualToValue(userID).observeEventType(.ChildAdded, withBlock: { snapshot in
+            print(snapshot)
         })
     }
     
