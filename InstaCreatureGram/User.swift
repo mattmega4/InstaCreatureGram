@@ -32,7 +32,7 @@ class User: NSObject {
             } else {
                 //perform segue
                 UID = String(data)
-                Creature().createNewCreature(UIImage())
+//                Creature().createNewCreature(UIImage())
             }
         }
     }
