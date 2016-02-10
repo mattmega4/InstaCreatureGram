@@ -12,13 +12,16 @@
 		325BEC4E1C6734D0004C281C /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325BEC4D1C6734D0004C281C /* UserProfileViewController.swift */; };
 		325BEC501C6734E0004C281C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325BEC4F1C6734E0004C281C /* LoginViewController.swift */; };
 		325BEC521C6734F4004C281C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325BEC511C6734F4004C281C /* SearchViewController.swift */; };
+<<<<<<< HEAD
 		326B964F1C691B52009DBA16 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326B964E1C691B52009DBA16 /* User.swift */; };
 		326B96521C691B96009DBA16 /* BridgeHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 326B96511C691B96009DBA16 /* BridgeHeader.m */; };
 		326B96541C692100009DBA16 /* Creature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326B96531C692100009DBA16 /* Creature.swift */; };
 		326B96561C698297009DBA16 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326B96551C698297009DBA16 /* Comment.swift */; };
+=======
 		8B4827C61C69D57E00E0A868 /* CreatorRowCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4827C51C69D57E00E0A868 /* CreatorRowCreator.swift */; };
 		8B6405ED1C697E4D00081C13 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6405EC1C697E4D00081C13 /* TableViewCell.swift */; };
 		8B6405EF1C69808D00081C13 /* ElementalCreatureViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6405EE1C69808D00081C13 /* ElementalCreatureViewController+Extension.swift */; };
+>>>>>>> master
 		8BDFFA651C64298500982401 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFA641C64298500982401 /* AppDelegate.swift */; };
 		8BDFFA6A1C64298500982401 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BDFFA681C64298500982401 /* Main.storyboard */; };
 		8BDFFA6D1C64298500982401 /* InstaCreatureGram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFA6B1C64298500982401 /* InstaCreatureGram.xcdatamodeld */; };
@@ -33,15 +36,18 @@
 		325BEC4D1C6734D0004C281C /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		325BEC4F1C6734E0004C281C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		325BEC511C6734F4004C281C /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		326B964E1C691B52009DBA16 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		326B96501C691B96009DBA16 /* InstaCreatureGram-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InstaCreatureGram-Bridging-Header.h"; sourceTree = "<group>"; };
 		326B96511C691B96009DBA16 /* BridgeHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BridgeHeader.m; sourceTree = "<group>"; };
 		326B96531C692100009DBA16 /* Creature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Creature.swift; sourceTree = "<group>"; };
 		326B96551C698297009DBA16 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		4C474670D2F268AD52155969 /* Pods-InstaCreatureGram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaCreatureGram.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstaCreatureGram/Pods-InstaCreatureGram.release.xcconfig"; sourceTree = "<group>"; };
+=======
 		8B4827C51C69D57E00E0A868 /* CreatorRowCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorRowCreator.swift; sourceTree = "<group>"; };
 		8B6405EC1C697E4D00081C13 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		8B6405EE1C69808D00081C13 /* ElementalCreatureViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ElementalCreatureViewController+Extension.swift"; sourceTree = "<group>"; };
+>>>>>>> master
 		8BDFFA611C64298500982401 /* InstaCreatureGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaCreatureGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BDFFA641C64298500982401 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BDFFA691C64298500982401 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -254,8 +260,11 @@
 				325BEC521C6734F4004C281C /* SearchViewController.swift in Sources */,
 				325BEC4C1C673104004C281C /* ElementalFeedViewController.swift in Sources */,
 				325BEC4E1C6734D0004C281C /* UserProfileViewController.swift in Sources */,
+<<<<<<< HEAD
 				326B964F1C691B52009DBA16 /* User.swift in Sources */,
+=======
 				8B6405ED1C697E4D00081C13 /* TableViewCell.swift in Sources */,
+>>>>>>> master
 				325BEC4B1C673104004C281C /* ElementalCreatorViewController.swift in Sources */,
 				8B6405EF1C69808D00081C13 /* ElementalCreatureViewController+Extension.swift in Sources */,
 				8BDFFA6D1C64298500982401 /* InstaCreatureGram.xcdatamodeld in Sources */,
