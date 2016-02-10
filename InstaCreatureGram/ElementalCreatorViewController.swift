@@ -10,6 +10,7 @@ import UIKit
 
 class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
     
+    @IBOutlet var finalView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet var imageView: UIImageView!
     @IBOutlet weak var imageViewOne: UIImageView!
@@ -327,7 +328,7 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     func takeScreenshot() -> UIImage {
-        let theView = self.view
+        let theView = self.finalView
         UIGraphicsBeginImageContextWithOptions(theView.bounds.size, true, 0.0)
         theView.drawViewHierarchyInRect(theView.bounds, afterScreenUpdates: true)
         let image = UIGraphicsGetImageFromCurrentImageContext()
