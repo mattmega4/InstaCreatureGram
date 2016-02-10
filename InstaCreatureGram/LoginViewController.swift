@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func onNewUserButtonTapped(sender: UIButton) {
         User().createNewUser(emailTextField.text!, password: passwordTextField.text!)
-        self.performSegueWithIdentifier("login", sender: sender)
+//        self.performSegueWithIdentifier("login", sender: sender)
     }
     
     @IBAction func onLoginButtonTapped(sender: AnyObject) {
