@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QuartzCore
 
 class UserProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
@@ -27,9 +28,9 @@ class UserProfileViewController: UIViewController, UICollectionViewDelegate, UIC
     @IBOutlet weak var descriptionLabel: UITextView!
     
 
-    @IBOutlet var midNavBar: UIView!
+
     
-    
+    @IBOutlet weak var midNavBar: UIStackView!
     
     
     
@@ -39,8 +40,15 @@ class UserProfileViewController: UIViewController, UICollectionViewDelegate, UIC
         //change to
         self.navigationItem.title = "RubberDucky4444"
 
-//        self.midNavBar.layer.borderWidth = 1
-//        self.midNavBar.layer.borderColor = UIColor(red:222/255.0, green:225/255.0, blue:227/255.0, alpha: 1.0).CGColor
+        self.midNavBar.layer.borderWidth = 1
+        self.midNavBar.layer.borderColor = UIColor(red:222/255.0, green:225/255.0, blue:227/255.0, alpha: 1.0).CGColor
+        
+        
+        
+        profilePic.layer.cornerRadius = 55;
+        profilePic.clipsToBounds = true;
+        view.addSubview(profilePic)
+        
         
         self.automaticallyAdjustsScrollViewInsets = false
         
