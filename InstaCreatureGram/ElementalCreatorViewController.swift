@@ -389,4 +389,12 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
             storedOffsets[indexPath.row] = tableViewCell.collectionViewOffset
     }
     
+    @IBAction func removeTapped(sender: AnyObject) {
+        
+        imageViewOne.image = nil
+        imageViewTwo.image = nil
+        imageViewThree.image = nil
+    }
+    
+    
 }
