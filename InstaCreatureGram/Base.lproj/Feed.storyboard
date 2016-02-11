@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -35,15 +34,15 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6PE-ox-DdB">
                                                     <rect key="frame" x="32" y="268" width="30" height="30"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="Elh-WD-QAj"/>
-                                                        <constraint firstAttribute="width" constant="30" id="V3E-lm-hDE"/>
+                                                        <constraint firstAttribute="width" constant="30" id="CDW-du-QUJ"/>
+                                                        <constraint firstAttribute="height" constant="30" id="bgX-Yi-K3T"/>
                                                     </constraints>
                                                     <state key="normal" title="like"/>
                                                     <connections>
                                                         <action selector="onLikeButtonPressed:" destination="hza-8W-ccC" eventType="touchUpInside" id="91g-Xa-uRp"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WoD-l5-RNZ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WoD-l5-RNZ">
                                                     <rect key="frame" x="70" y="272" width="42" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="42" id="hir-qd-bnT"/>
@@ -57,11 +56,10 @@
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="0c6-95-VA0" secondAttribute="bottom" constant="63.5" id="69a-hG-Tud"/>
                                                 <constraint firstItem="0c6-95-VA0" firstAttribute="leading" secondItem="Uez-51-Sqg" secondAttribute="leadingMargin" id="9tx-lb-EPJ"/>
-                                                <constraint firstItem="6PE-ox-DdB" firstAttribute="leading" secondItem="Uez-51-Sqg" secondAttribute="leadingMargin" constant="24" id="MUd-kl-2RQ"/>
                                                 <constraint firstItem="0c6-95-VA0" firstAttribute="trailing" secondItem="Uez-51-Sqg" secondAttribute="trailingMargin" id="Mip-zq-Yl9"/>
-                                                <constraint firstItem="6PE-ox-DdB" firstAttribute="top" secondItem="Uez-51-Sqg" secondAttribute="topMargin" constant="260" id="Vsf-Px-enI"/>
                                                 <constraint firstItem="0c6-95-VA0" firstAttribute="top" secondItem="Uez-51-Sqg" secondAttribute="topMargin" id="Wqb-94-BHP"/>
-                                                <constraint firstItem="WoD-l5-RNZ" firstAttribute="leading" secondItem="6PE-ox-DdB" secondAttribute="trailing" constant="8" id="YMh-NG-HiC"/>
+                                                <constraint firstItem="6PE-ox-DdB" firstAttribute="leading" secondItem="Uez-51-Sqg" secondAttribute="leadingMargin" constant="24" id="YLH-ua-3BR"/>
+                                                <constraint firstItem="6PE-ox-DdB" firstAttribute="top" secondItem="0c6-95-VA0" secondAttribute="bottom" constant="-1" id="aML-Be-xHJ"/>
                                                 <constraint firstItem="WoD-l5-RNZ" firstAttribute="top" secondItem="0c6-95-VA0" secondAttribute="bottom" constant="3" id="eC2-ob-77U"/>
                                             </constraints>
                                         </tableViewCellContentView>
