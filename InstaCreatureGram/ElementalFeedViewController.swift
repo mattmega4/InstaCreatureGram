@@ -94,12 +94,11 @@ class ElementalFeedViewController: UIViewController, UITableViewDataSource, UITa
         let headerLabel = UILabel()
         headerLabel.text = currentCreature.email
         header.addSubview(headerLabel)
-        // not sure why this was done, masks the image
-//        let string = self.sampleArray[section]
-//        title. = UIImage
-        
-//        title.backgroundColor = UIColor.blackColor()
-        header.alpha = 1.0
+        headerLabel.frame = CGRectMake(0, 0, self.view.frame.size.width, 50)
+        headerLabel.textAlignment = NSTextAlignment.Center
+        headerLabel.backgroundColor = UIColor.whiteColor()
+        header.backgroundColor = UIColor.whiteColor()
+        header.alpha = 0.8
         
         return header
     }

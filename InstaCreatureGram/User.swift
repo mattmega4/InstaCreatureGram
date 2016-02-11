@@ -11,6 +11,7 @@ import UIKit
 class User: NSObject {
     
     let myRootRef = Firebase(url: FirebaseUrl)
+    let userDefaults = NSUserDefaults()
     
     func createNewUser(email:String, password:String) {
         myRootRef.createUser(email, password: password,
@@ -21,6 +22,8 @@ class User: NSObject {
                     let uid = result["uid"] as? String
                     print("Successfully created user account with uid: \(uid)")
                     UID = uid! as String
+                    self.userDefaults.setObject(UID, forKey: "uid")
+                    print("set defaults")
                     EMAIL = email
                     self.createUserInDB(email)
                 }
@@ -42,6 +45,8 @@ class User: NSObject {
                 //perform segue
                 UID = String(data)
                 EMAIL = username
+                self.userDefaults.setObject(String(data), forKey: "uid")
+                print("set defaults")
 //                Creature().getAllPostsForUser(UID)
 //                Creature().createNewCreature(UIImage())
             }

@@ -36,6 +36,8 @@ class UserProfileViewController: UIViewController, UICollectionViewDelegate, UIC
     
     let userPosts = NSMutableArray()
     
+    let userDefaults = NSUserDefaults()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -101,11 +103,20 @@ class UserProfileViewController: UIViewController, UICollectionViewDelegate, UIC
                     newCreature.email = currentPost["email"] as! String
                     newCreature.likes = currentPost["likes"] as! NSNumber
                     newCreature.timestamp = currentPost["time"] as! NSNumber
-                    if newCreature.id == UID {
-                        self.userPosts.addObject(newCreature)
+                    if UID == "" {
+                        let userID = self.userDefaults.valueForKey("uid") as! String
+                        if newCreature.id == userID {
+                            self.userPosts.addObject(newCreature)
+                        }
+                    }else{
+                        if newCreature.id == UID {
+                            self.userPosts.addObject(newCreature)
+                        }
                     }
                 }
-                self.collectionView.reloadData()
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.collectionView.reloadData()
+                })
             }catch let error as NSError {
                 print("error"+error.localizedDescription)
             }
@@ -131,15 +142,16 @@ class UserProfileViewController: UIViewController, UICollectionViewDelegate, UIC
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CellCV",
             forIndexPath: indexPath)
-        
-       
-            cell.backgroundView = UIImageView.init(image: gridArr[indexPath.item])
+            let currentPost = userPosts[indexPath.row] as! Creature
+            cell.backgroundView = UIImageView.init(image: currentPost.image)
+//            cell.backgroundView = UIImageView.init(image: gridArr[indexPath.item])
         
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return gridArr.count
+        print(userPosts.count)
+        return userPosts.count
     }
 
     @IBAction func editProfileTapped(sender: AnyObject) {
