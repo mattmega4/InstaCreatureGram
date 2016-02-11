@@ -351,6 +351,11 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
         imageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
     }
     
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 52;
+    }
+    
     func tableView(tableView: UITableView,
         numberOfRowsInSection section: Int) -> Int {
             return 3
