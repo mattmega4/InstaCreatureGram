@@ -12,7 +12,10 @@ class Creature: NSObject {
     
     let myRootRef = Firebase(url: FirebaseUrl)
     var image = UIImage()
-    
+    var timestamp = NSNumber()
+    var creator = String()
+    var likes = NSNumber()
+    var id = String()
     
     func createNewCreature(image: UIImage) {
 //        self.image = image
@@ -72,6 +75,9 @@ class Creature: NSObject {
         posts.queryEqualToValue(userID).observeEventType(.ChildAdded, withBlock: { snapshot in
             print(snapshot)
         })
+    }
+    
+    func getAllPosts() {
     }
     
 }
