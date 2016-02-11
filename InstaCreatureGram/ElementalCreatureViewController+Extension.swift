@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension ElementalCreatorViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension ElementalCreatorViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
  
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -75,5 +75,16 @@ extension ElementalCreatorViewController: UICollectionViewDelegate, UICollection
         
         
     }
+    
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+
+        return CGSize(width: 40, height:40);
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+        return UIEdgeInsetsMake(6, 2, 6, 2);
+    }
+
     
 }
