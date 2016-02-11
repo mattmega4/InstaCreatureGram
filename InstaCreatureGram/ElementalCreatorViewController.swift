@@ -10,6 +10,7 @@ import UIKit
 
 class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
     
+    @IBOutlet var finalView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet var imageView: UIImageView!
     @IBOutlet weak var imageViewOne: UIImageView!
@@ -21,6 +22,7 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
     var topArr: [UIImage]!
     var midArr: [UIImage]!
     var botArr: [UIImage]!
+    var newCreature = Creature()
     
 //create an array of array
     var combinedArr : [[UIImage]]?
@@ -36,7 +38,7 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
         imageViewOne.userInteractionEnabled = true
         imageViewTwo.userInteractionEnabled = true
         imageViewThree.userInteractionEnabled = true
- 
+
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "tap:")
         tapGestureRecognizer.numberOfTapsRequired = 2
@@ -324,30 +326,80 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
     @IBAction func screenShot(sender: AnyObject) {
         let image = takeScreenshot()
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        
+        self.newCreature.createNewCreature(image)
+        
+        
     }
     
     func takeScreenshot() -> UIImage {
-        let theView = self.view
+        let theView = self.finalView
         UIGraphicsBeginImageContextWithOptions(theView.bounds.size, true, 0.0)
         theView.drawViewHierarchyInRect(theView.bounds, afterScreenUpdates: true)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return image
     }
+
+    //OPEN PHOTO LIBRARY FUNCTIONALITY
     
+    @IBAction func openLibrary(sender: AnyObject) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            imagePicker.allowsEditing = true
+            self.presentViewController(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        imageView.contentMode = .ScaleAspectFit
+        imageView.image = chosenImage
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+
+        
     //TAKE PHOTO FUNCTIONALITY
     
     @IBAction func takePhoto(sender: UIBarButtonItem) {
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = .Camera
-        
         presentViewController(imagePicker, animated: true, completion: nil)
+        
+    ////POSSIBLE WAY TO PRESENT BOTH LIBRARY AND CAMERA OPTIONS ON CAMERA VC:
+//        func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
+//            if(imagePicker.sourceType == UIImagePickerControllerSourceType.PhotoLibrary){
+//                let button = UIBarButtonItem(title: "Take picture", style: UIBarButtonItemStyle.Plain, target: self, action: "showCamera")
+//                viewController.navigationItem.rightBarButtonItem = button
+//            }else{
+//                let button = UIBarButtonItem(title: "Choose picture", style: UIBarButtonItemStyle.Plain, target: self, action: "choosePicture")
+//                viewController.navigationItem.rightBarButtonItem = button
+//                viewController.navigationController?.navigationBarHidden = false
+//                viewController.navigationController?.navigationBar.translucent = true
+//            }
+//        }
+//        
+//        func showCamera(){
+//            imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+//        }
+//        
+//        func choosePicture(){
+//            imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+//        }
+        
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    func imagePickerController1(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         imagePicker.dismissViewControllerAnimated(true, completion: nil)
         imageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+    }
+    
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 52;
     }
     
     func tableView(tableView: UITableView,
@@ -382,5 +434,13 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
             
             storedOffsets[indexPath.row] = tableViewCell.collectionViewOffset
     }
+    
+    @IBAction func removeTapped(sender: AnyObject) {
+        
+        imageViewOne.image = nil
+        imageViewTwo.image = nil
+        imageViewThree.image = nil
+    }
+    
     
 }
