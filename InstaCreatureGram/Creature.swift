@@ -16,6 +16,7 @@ class Creature: NSObject {
     var creator = String()
     var likes = NSNumber()
     var id = String()
+    var email = String()
     
     func createNewCreature(image: UIImage) {
 //        self.image = image
@@ -28,12 +29,13 @@ class Creature: NSObject {
         let postTimeStamp = posts.childByAppendingPath("time")
         let postLikes = posts.childByAppendingPath("likes")
         let postUser = posts.childByAppendingPath("user")
+        let postEmail = posts.childByAppendingPath("email")
+        postEmail.setValue(EMAIL)
         postUser.setValue(String(UID))
         postLikes.setValue(0)
         postImage.setValue(imageString)
         postTimeStamp.setValue(FirebaseServerValue.timestamp())
         print("created creature")
-        createNewComments("-KA94y1MmrUhoQQfOsu9", comment: "test test test")
     }
     
     func createNewComments(postID: String, comment:String) {
@@ -41,7 +43,6 @@ class Creature: NSObject {
         let commentsForPost = allComments.childByAppendingPath(postID)
         let newComment = commentsForPost.childByAppendingPath("content")
         newComment.setValue(comment)
-        likeCreature("-KA94y1MmrUhoQQfOsu9")
         print("created comment")
     }
     

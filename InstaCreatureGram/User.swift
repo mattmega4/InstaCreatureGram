@@ -21,6 +21,7 @@ class User: NSObject {
                     let uid = result["uid"] as? String
                     print("Successfully created user account with uid: \(uid)")
                     UID = uid! as String
+                    EMAIL = email
                     self.createUserInDB(email)
                 }
         })
@@ -40,6 +41,7 @@ class User: NSObject {
             } else {
                 //perform segue
                 UID = String(data)
+                EMAIL = username
 //                Creature().getAllPostsForUser(UID)
 //                Creature().createNewCreature(UIImage())
             }

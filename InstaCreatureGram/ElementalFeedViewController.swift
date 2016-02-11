@@ -37,13 +37,18 @@ class ElementalFeedViewController: UIViewController, UITableViewDataSource, UITa
     
     }
     
+    override func viewDidAppear(animated: Bool) {
+        tableView.reloadData()
+    }
+    
     func pullAllPosts() {
+        self.postArray.removeAllObjects()
         let allPosts = myRootRef.childByAppendingPath("posts")
+        allPosts.keepSynced(true)
         
         allPosts.queryOrderedByChild("timestamp").observeEventType(.ChildAdded, withBlock: { snapshot in
             if snapshot.value["user"] as! String != "" {
                 let newCreature = Creature()
-                //            print(snapshot.value)
                 let encodedData = snapshot.value["image"] as! String
                 let decodedData = NSData(base64EncodedString: encodedData, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
                 let decodedImage = UIImage(data: decodedData!)
@@ -51,8 +56,9 @@ class ElementalFeedViewController: UIViewController, UITableViewDataSource, UITa
                 newCreature.timestamp = snapshot.value["time"] as! NSNumber
                 newCreature.creator = snapshot.value["user"] as! String
                 newCreature.likes = snapshot.value["likes"] as! NSNumber
+                print(snapshot.key)
+                newCreature.email = snapshot.value["email"] as! String
                 newCreature.id = snapshot.key
-                
                 self.postArray.addObject(newCreature)
                 self.tableView.reloadData()
                 print("got post")
@@ -83,16 +89,19 @@ class ElementalFeedViewController: UIViewController, UITableViewDataSource, UITa
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
-        let title = UIView()
-
+        let currentCreature = self.postArray[section] as! Creature
+        let header = UIView()
+        let headerLabel = UILabel()
+        headerLabel.text = currentCreature.email
+        header.addSubview(headerLabel)
         // not sure why this was done, masks the image
 //        let string = self.sampleArray[section]
 //        title. = UIImage
         
 //        title.backgroundColor = UIColor.blackColor()
-        title.alpha = 0.0
+        header.alpha = 1.0
         
-        return title
+        return header
     }
     
     func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
