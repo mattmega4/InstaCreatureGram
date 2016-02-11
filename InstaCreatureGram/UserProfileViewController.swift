@@ -32,7 +32,9 @@ class UserProfileViewController: UIViewController, UICollectionViewDelegate, UIC
     
     @IBOutlet weak var midNavBar: UIStackView!
     
+    let myRootRef = Firebase(url: FirebaseUrl)
     
+    let userPosts = NSMutableArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +73,44 @@ class UserProfileViewController: UIViewController, UICollectionViewDelegate, UIC
         ]
         
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        getAllPosts()
+    }
+    
+    func getAllPosts() {
+        var allPosts = NSDictionary()
+        let posts = myRootRef.childByAppendingPath("posts")
+        let urlString = String(format: "%@.json", posts.description)
+        let url = NSURL(string: urlString)
+        let session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithURL(url!) { (data, response, error) -> Void in
+            do {
+                allPosts = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! NSDictionary
+                let keysArray = allPosts.allKeys
+                for i in 0...keysArray.count-1 {
+                    let currentKey = keysArray[i] as! String
+                    let currentPost = allPosts[currentKey] as! NSDictionary
+                    let newCreature = Creature()
+                    let encodedData = currentPost["image"] as! String
+                    let decodedData = NSData(base64EncodedString: encodedData, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
+                    let decodedImage = UIImage(data: decodedData!)
+                    newCreature.image = decodedImage!
+                    newCreature.id = currentPost["user"] as! String
+                    newCreature.email = currentPost["email"] as! String
+                    newCreature.likes = currentPost["likes"] as! NSNumber
+                    newCreature.timestamp = currentPost["time"] as! NSNumber
+                    if newCreature.id == UID {
+                        self.userPosts.addObject(newCreature)
+                    }
+                }
+                self.collectionView.reloadData()
+            }catch let error as NSError {
+                print("error"+error.localizedDescription)
+            }
+        }
+        task.resume()
     }
 
     override func viewWillLayoutSubviews() {

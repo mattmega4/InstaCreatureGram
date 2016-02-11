@@ -72,10 +72,7 @@ class Creature: NSObject {
     }
     
     func getAllPostsForUser(userID: String) {
-        let posts = myRootRef.childByAppendingPath("posts")
-        posts.queryEqualToValue(userID).observeEventType(.ChildAdded, withBlock: { snapshot in
-            print(snapshot)
-        })
+        
     }
     
     func getAllPosts() {
