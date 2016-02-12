@@ -19,7 +19,6 @@ class PostTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         let tap = UITapGestureRecognizer(target: self, action: "onLikeButtonPressed")
         tap.numberOfTapsRequired = 2
         postImageView.addGestureRecognizer(tap)
@@ -28,7 +27,6 @@ class PostTableViewCell: UITableViewCell {
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
 
     @IBAction func onLikeButtonPressed(sender: AnyObject) {

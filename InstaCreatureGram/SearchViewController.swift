@@ -16,7 +16,6 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     var searchActive: Bool = false
     var filtered: [String] = []
-    //var dataBase: [String] = ["matt", "hoffa", "andrew", "nader", "evan", "michael", "jess"]
     var emails = NSMutableArray()
     
     let myRootRef = Firebase(url: FirebaseUrl)
@@ -151,6 +150,5 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         }
         task.resume()
     }
-
     
 }

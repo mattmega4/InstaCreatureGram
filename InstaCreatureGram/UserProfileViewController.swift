@@ -41,7 +41,6 @@ class UserProfileViewController: UIViewController, UICollectionViewDelegate, UIC
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //change to
         self.navigationItem.title = self.userDefaults.valueForKey("useremail") as? String
 
         self.midNavBar.layer.borderWidth = 1
@@ -147,7 +146,6 @@ class UserProfileViewController: UIViewController, UICollectionViewDelegate, UIC
             forIndexPath: indexPath)
             let currentPost = userPosts[indexPath.row] as! Creature
             cell.backgroundView = UIImageView.init(image: currentPost.image)
-//            cell.backgroundView = UIImageView.init(image: gridArr[indexPath.item])
         
         return cell
     }
@@ -158,11 +156,5 @@ class UserProfileViewController: UIViewController, UICollectionViewDelegate, UIC
         print(userPosts.count)
         return userPosts.count
     }
-
-    @IBAction func editProfileTapped(sender: AnyObject) {
-    }
-    
-    
-    
     
 }

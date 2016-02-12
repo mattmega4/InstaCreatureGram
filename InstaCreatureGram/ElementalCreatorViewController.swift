@@ -23,12 +23,7 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
     var bodArr: [UIImage]!
     var botArr: [UIImage]!
     var newCreature = Creature()
-    
-//create an array of array
     var combinedArr : [[UIImage]]?
-
-//    combinedArr
-    
     var expanded = false
     
     
@@ -63,9 +58,6 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
         panGestureRecognizer1.maximumNumberOfTouches = 2
         
         let rotationGestureRecognizer1 = UIRotationGestureRecognizer(target: self, action: "rotate1:")
-        
-        
-        
         
         let tapGestureRecognizer2 = UITapGestureRecognizer(target: self, action: "tap2:")
         tapGestureRecognizer2.numberOfTapsRequired = 2
@@ -164,10 +156,7 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     func tap(gestureRecognizer: UITapGestureRecognizer) {
-       
-    
         var frame = imageViewOne.frame
-
         if (!expanded) {
             frame.size.height = frame.size.height * 2
             frame.size.width = frame.size.width * 2
@@ -179,8 +168,6 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
         }
         
         imageViewOne.frame = frame
-        
-        
     }
     
     func pinch(gestureRecognizer: UIPinchGestureRecognizer) {
@@ -205,19 +192,8 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
         }
     }
     
-    
-    
-    
-    
-    
     func tap1(gestureRecognizer: UITapGestureRecognizer) {
-        
-        
         var frame = imageViewTwo.frame
-        
-        
-        
-        
         if (!expanded) {
             frame.size.height = frame.size.height * 2
             frame.size.width = frame.size.width * 2
@@ -227,10 +203,7 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
             frame.size.width = frame.size.width / 2
             expanded = false
         }
-        
         imageViewTwo.frame = frame
-        
-        
     }
     
     func pinch1(gestureRecognizer: UIPinchGestureRecognizer) {
@@ -255,13 +228,8 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
         }
     }
     
-
-    
     func tap2(gestureRecognizer: UITapGestureRecognizer) {
-        
-        
         var frame = imageViewThree.frame
-
         if (!expanded) {
             frame.size.height = frame.size.height * 2
             frame.size.width = frame.size.width * 2
@@ -271,10 +239,7 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
             frame.size.width = frame.size.width / 2
             expanded = false
         }
-        
         imageViewThree.frame = frame
-        
-        
     }
     
     func pinch2(gestureRecognizer: UIPinchGestureRecognizer) {
@@ -299,15 +264,10 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
         }
     }
     
-    
-    
-    
-    
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer,
         shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
             return true
     }
-
     
     //SCREENSHOT FUNCTIONALITY
     
@@ -346,7 +306,6 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
         imageView.image = chosenImage
         dismissViewControllerAnimated(true, completion: nil)
     }
-
         
     //TAKE PHOTO FUNCTIONALITY
     
@@ -355,28 +314,6 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
         imagePicker.delegate = self
         imagePicker.sourceType = .Camera
         presentViewController(imagePicker, animated: true, completion: nil)
-        
-    ////POSSIBLE WAY TO PRESENT BOTH LIBRARY AND CAMERA OPTIONS ON CAMERA VC:
-//        func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
-//            if(imagePicker.sourceType == UIImagePickerControllerSourceType.PhotoLibrary){
-//                let button = UIBarButtonItem(title: "Take picture", style: UIBarButtonItemStyle.Plain, target: self, action: "showCamera")
-//                viewController.navigationItem.rightBarButtonItem = button
-//            }else{
-//                let button = UIBarButtonItem(title: "Choose picture", style: UIBarButtonItemStyle.Plain, target: self, action: "choosePicture")
-//                viewController.navigationItem.rightBarButtonItem = button
-//                viewController.navigationController?.navigationBarHidden = false
-//                viewController.navigationController?.navigationBar.translucent = true
-//            }
-//        }
-//        
-//        func showCamera(){
-//            imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
-//        }
-//        
-//        func choosePicture(){
-//            imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-//        }
-        
     }
     
     func imagePickerController1(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
@@ -396,7 +333,6 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
     
     func tableView(tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-            
             let cell = tableView.dequeueReusableCellWithIdentifier("CellT",
                 forIndexPath: indexPath) as! TableViewCell
             cell.whichCell = indexPath.row
@@ -406,9 +342,7 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
     func tableView(tableView: UITableView,
         willDisplayCell cell: UITableViewCell,
         forRowAtIndexPath indexPath: NSIndexPath) {
-            
             guard let tableViewCell = cell as? TableViewCell else { return }
-            
             tableViewCell.setCollectionViewDataSourceDelegate(self, forRow: indexPath.row)
             tableViewCell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
     }
@@ -416,18 +350,14 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
     func tableView(tableView: UITableView,
         didEndDisplayingCell cell: UITableViewCell,
         forRowAtIndexPath indexPath: NSIndexPath) {
-            
             guard let tableViewCell = cell as? TableViewCell else { return }
-            
             storedOffsets[indexPath.row] = tableViewCell.collectionViewOffset
     }
     
     @IBAction func removeTapped(sender: AnyObject) {
-        
         imageViewOne.image = nil
         imageViewTwo.image = nil
         imageViewThree.image = nil
     }
-    
     
 }

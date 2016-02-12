@@ -17,7 +17,6 @@ extension ElementalCreatorViewController: UICollectionViewDelegate, UICollection
     }
     
     
-    
     func collectionView(collectionView: UICollectionView,
         numberOfItemsInSection section: Int) -> Int {
             
@@ -30,7 +29,6 @@ extension ElementalCreatorViewController: UICollectionViewDelegate, UICollection
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CellC",
                 forIndexPath: indexPath)
             
-//            print(collectionView.tag)
             if collectionView.tag == 0 {
                 cell.backgroundView = UIImageView.init(image: topArr[indexPath.item])
             } else if (collectionView.tag == 1) {
@@ -39,8 +37,6 @@ extension ElementalCreatorViewController: UICollectionViewDelegate, UICollection
                 cell.backgroundView = UIImageView.init(image: botArr[indexPath.item])
             }
             
-            
-            
             return cell
 }
 
@@ -48,11 +44,6 @@ extension ElementalCreatorViewController: UICollectionViewDelegate, UICollection
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         let cell = collectionView.cellForItemAtIndexPath(indexPath)!
-//        let color = cell.contentView
-//        imageViewOne.addSubview(color)
-//        print("\(color)")
-
-        
         
         if collectionView.tag == 0 {
             
@@ -72,7 +63,6 @@ extension ElementalCreatorViewController: UICollectionViewDelegate, UICollection
             let image = view.image!
             self.imageViewThree.image = image
         }
-        
         
     }
     
