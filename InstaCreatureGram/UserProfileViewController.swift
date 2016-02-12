@@ -42,7 +42,7 @@ class UserProfileViewController: UIViewController, UICollectionViewDelegate, UIC
         super.viewDidLoad()
         
         //change to
-        self.navigationItem.title = "RubberDucky4444"
+//        self.navigationItem.title = "RubberDucky4444"
 
         self.midNavBar.layer.borderWidth = 1
         self.midNavBar.layer.borderColor = UIColor(red:222/255.0, green:225/255.0, blue:227/255.0, alpha: 1.0).CGColor
@@ -53,27 +53,7 @@ class UserProfileViewController: UIViewController, UICollectionViewDelegate, UIC
         profilePic.clipsToBounds = true;
         view.addSubview(profilePic)
         
-        
         self.automaticallyAdjustsScrollViewInsets = false
-        
-        gridArr = [
-            UIImage(named: "bot1.jpg")!,
-            UIImage(named: "bot2.jpg")!,
-            UIImage(named: "bot3.jpg")!,
-            UIImage(named: "bot4.jpg")!,
-            UIImage(named: "bot5.jpg")!,
-            UIImage(named: "bot6.jpg")!,
-            UIImage(named: "bot7.jpg")!,
-            UIImage(named: "bot8.jpg")!,
-            UIImage(named: "bot9.jpg")!,
-            UIImage(named: "bot10.jpg")!,
-            UIImage(named: "bot11.jpg")!,
-            UIImage(named: "bot12.jpg")!,
-            UIImage(named: "bot13.jpg")!,
-            UIImage(named: "bot14.jpg")!,
-            UIImage(named: "bot15.jpg")!
-        ]
-        
         
     }
     
@@ -82,6 +62,7 @@ class UserProfileViewController: UIViewController, UICollectionViewDelegate, UIC
     }
     
     func getAllPosts() {
+        userPosts.removeAllObjects()
         var allPosts = NSDictionary()
         let posts = myRootRef.childByAppendingPath("posts")
         let urlString = String(format: "%@.json", posts.description)
@@ -101,6 +82,9 @@ class UserProfileViewController: UIViewController, UICollectionViewDelegate, UIC
                     newCreature.image = decodedImage!
                     newCreature.id = currentPost["user"] as! String
                     newCreature.email = currentPost["email"] as! String
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        self.navigationItem.title = newCreature.email
+                    })
                     newCreature.likes = currentPost["likes"] as! NSNumber
                     newCreature.timestamp = currentPost["time"] as! NSNumber
                     if UID == "" {
@@ -115,6 +99,7 @@ class UserProfileViewController: UIViewController, UICollectionViewDelegate, UIC
                     }
                 }
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.postsCount.text = String(self.userPosts.count)
                     self.collectionView.reloadData()
                 })
             }catch let error as NSError {
