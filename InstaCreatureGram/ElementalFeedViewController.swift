@@ -49,7 +49,7 @@ class ElementalFeedViewController: UIViewController, UITableViewDataSource, UITa
                 print(snapshot.key)
                 newCreature.email = snapshot.value["email"] as! String
                 newCreature.id = snapshot.key
-                self.postArray.addObject(newCreature)
+                self.postArray.insertObject(newCreature, atIndex: 0)
                 self.tableView.reloadData()
                 print("got post")
                 
@@ -104,14 +104,14 @@ class ElementalFeedViewController: UIViewController, UITableViewDataSource, UITa
         let view = UIView()
         
         
-        view.backgroundColor = UIColor.purpleColor()
+        view.backgroundColor = UIColor(red: 245.0/255, green: 245.0/255, blue: 245.0/255, alpha: 1.0)
         view.alpha = 0.8
         
         
         let version = UILabel(frame: CGRectMake(28, 5, tableView.frame.width, 30))
         version.font = version.font.fontWithSize(14)
-        version.text = "Cutest Puppy in the world"
-        version.textColor = UIColor.lightGrayColor()
+        version.text = "insert comment here"
+        version.textColor = UIColor.darkGrayColor()
         version.textAlignment = .Left;
         
  

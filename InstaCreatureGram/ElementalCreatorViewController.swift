@@ -16,6 +16,7 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
     @IBOutlet weak var imageViewOne: UIImageView!
     @IBOutlet weak var imageViewTwo: UIImageView!
     @IBOutlet weak var imageViewThree: UIImageView!
+    @IBOutlet weak var removeButton: UIButton!
     
     var imagePicker: UIImagePickerController!
     var storedOffsets = [Int: CGFloat]()
@@ -316,10 +317,12 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         
         self.newCreature.createNewCreature(image)
+        removeButton.hidden = false
         
     }
     
     func takeScreenshot() -> UIImage {
+        removeButton.hidden = true
         let theView = self.finalView
         UIGraphicsBeginImageContextWithOptions(theView.bounds.size, true, 0.0)
         theView.drawViewHierarchyInRect(theView.bounds, afterScreenUpdates: true)
@@ -355,27 +358,6 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
         imagePicker.delegate = self
         imagePicker.sourceType = .Camera
         presentViewController(imagePicker, animated: true, completion: nil)
-        
-    ////POSSIBLE WAY TO PRESENT BOTH LIBRARY AND CAMERA OPTIONS ON CAMERA VC:
-//        func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
-//            if(imagePicker.sourceType == UIImagePickerControllerSourceType.PhotoLibrary){
-//                let button = UIBarButtonItem(title: "Take picture", style: UIBarButtonItemStyle.Plain, target: self, action: "showCamera")
-//                viewController.navigationItem.rightBarButtonItem = button
-//            }else{
-//                let button = UIBarButtonItem(title: "Choose picture", style: UIBarButtonItemStyle.Plain, target: self, action: "choosePicture")
-//                viewController.navigationItem.rightBarButtonItem = button
-//                viewController.navigationController?.navigationBarHidden = false
-//                viewController.navigationController?.navigationBar.translucent = true
-//            }
-//        }
-//        
-//        func showCamera(){
-//            imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
-//        }
-//        
-//        func choosePicture(){
-//            imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-//        }
         
     }
     

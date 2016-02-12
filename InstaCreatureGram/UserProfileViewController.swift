@@ -59,6 +59,27 @@ class UserProfileViewController: UIViewController, UICollectionViewDelegate, UIC
     
     override func viewWillAppear(animated: Bool) {
         getAllPosts()
+        getUserData()
+    }
+    
+    func getUserData() {
+        let uidString = UID.substringWithRange(Range<String.Index>(start: UID.startIndex.advancedBy(9), end: UID.endIndex))
+        let users = myRootRef.childByAppendingPath("users").childByAppendingPath(uidString)
+        let urlString = String(format: "%@.json", users)
+        let url = NSURL(string: urlString)
+        let session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithURL(url!) { (data, response, error) -> Void in
+            do {
+                let user = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! NSDictionary
+                let encodedData = user["profile_pic"] as! String
+                let decodedData = NSData(base64EncodedString: encodedData, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
+                let decodedImage = UIImage(data: decodedData!)
+                self.profilePic.image = decodedImage
+            }catch let error as NSError {
+                print("error"+error.localizedDescription)
+            }
+        }
+        task.resume()
     }
     
     func getAllPosts() {

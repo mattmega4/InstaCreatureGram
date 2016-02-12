@@ -33,9 +33,16 @@ class User: NSObject {
     
     func createUserInDB(email:String) {
         let user = myRootRef.childByAppendingPath("users").childByAppendingPath(UID)
-        let emailPath = user.childByAppendingPath("email")
-        emailPath.setValue(email)
-        print("created user in DB")
+        let imageData:NSData = UIImagePNGRepresentation(UIImage(named: "user_pic")!)!
+        let imageString = imageData.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
+        let newUser = ["email":email, "profile_pic":imageString]
+        user.setValue(newUser)
+        print("created user in Database")
+    }
+    
+    func createFollowerRelationship(toFollow:String) {
+        let userFollows = myRootRef.childByAppendingPath("followers").childByAppendingPath(UID).childByAppendingPath(toFollow)
+        userFollows.setValue(true)
     }
     
     func loginUser(username:String, password:String) {
