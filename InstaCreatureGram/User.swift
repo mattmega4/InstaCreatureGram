@@ -23,6 +23,7 @@ class User: NSObject {
                     print("Successfully created user account with uid: \(uid)")
                     UID = uid! as String
                     self.userDefaults.setObject(UID, forKey: "uid")
+                    self.userDefaults.setObject(email, forKey: "useremail")
                     print("set defaults")
                     EMAIL = email
                     self.createUserInDB(email)
@@ -46,9 +47,8 @@ class User: NSObject {
                 UID = String(data)
                 EMAIL = username
                 self.userDefaults.setObject(String(data), forKey: "uid")
+                self.userDefaults.setObject(username, forKey: "useremail")
                 print("set defaults")
-//                Creature().getAllPostsForUser(UID)
-//                Creature().createNewCreature(UIImage())
             }
         }
     }

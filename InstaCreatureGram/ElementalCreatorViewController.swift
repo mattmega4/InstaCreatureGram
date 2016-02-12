@@ -317,7 +317,6 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
         
         self.newCreature.createNewCreature(image)
         
-        
     }
     
     func takeScreenshot() -> UIImage {

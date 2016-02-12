@@ -74,16 +74,16 @@
                             <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="2yW-YZ-gCe">
                                 <rect key="frame" x="0.0" y="260" width="600" height="40"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="midBarOne" translatesAutoresizingMaskIntoConstraints="NO" id="Bse-vq-oOV">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="midBarOne" translatesAutoresizingMaskIntoConstraints="NO" id="Bse-vq-oOV">
                                         <rect key="frame" x="0.0" y="0.0" width="15" height="40"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="midBarTwo" translatesAutoresizingMaskIntoConstraints="NO" id="ieY-cL-Bj4">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="midBarTwo" translatesAutoresizingMaskIntoConstraints="NO" id="ieY-cL-Bj4">
                                         <rect key="frame" x="15" y="0.0" width="195" height="40"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="midBarThree" translatesAutoresizingMaskIntoConstraints="NO" id="AnD-wF-UWI">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="midBarThree" translatesAutoresizingMaskIntoConstraints="NO" id="AnD-wF-UWI">
                                         <rect key="frame" x="210" y="0.0" width="195" height="40"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="midBarFour" translatesAutoresizingMaskIntoConstraints="NO" id="vma-FY-Ekv">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="midBarFour" translatesAutoresizingMaskIntoConstraints="NO" id="vma-FY-Ekv">
                                         <rect key="frame" x="405" y="0.0" width="195" height="40"/>
                                     </imageView>
                                 </subviews>

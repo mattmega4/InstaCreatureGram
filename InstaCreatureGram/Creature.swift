@@ -19,22 +19,14 @@ class Creature: NSObject {
     var email = String()
     
     func createNewCreature(image: UIImage) {
-//        self.image = image
-        self.image = UIImage(named: "logo1.png")!
+        self.image = image
+//        self.image = UIImage(named: "logo1.png")!
         let imageData:NSData = UIImagePNGRepresentation(self.image)!
         let imageString = imageData.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
         let allPosts = myRootRef.childByAppendingPath("posts")
         let posts = allPosts.childByAutoId()
-        let postImage = posts.childByAppendingPath("image")
-        let postTimeStamp = posts.childByAppendingPath("time")
-        let postLikes = posts.childByAppendingPath("likes")
-        let postUser = posts.childByAppendingPath("user")
-        let postEmail = posts.childByAppendingPath("email")
-        postEmail.setValue(EMAIL)
-        postUser.setValue(String(UID))
-        postLikes.setValue(0)
-        postImage.setValue(imageString)
-        postTimeStamp.setValue(FirebaseServerValue.timestamp())
+        let newPost = ["email":EMAIL, "user":String(UID), "likes":0, "image":imageString, "time":FirebaseServerValue.timestamp()]
+        posts.setValue(newPost)
         print("created creature")
     }
     

@@ -42,7 +42,7 @@ class UserProfileViewController: UIViewController, UICollectionViewDelegate, UIC
         super.viewDidLoad()
         
         //change to
-//        self.navigationItem.title = "RubberDucky4444"
+        self.navigationItem.title = self.userDefaults.valueForKey("useremail") as? String
 
         self.midNavBar.layer.borderWidth = 1
         self.midNavBar.layer.borderColor = UIColor(red:222/255.0, green:225/255.0, blue:227/255.0, alpha: 1.0).CGColor
@@ -82,9 +82,6 @@ class UserProfileViewController: UIViewController, UICollectionViewDelegate, UIC
                     newCreature.image = decodedImage!
                     newCreature.id = currentPost["user"] as! String
                     newCreature.email = currentPost["email"] as! String
-                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        self.navigationItem.title = newCreature.email
-                    })
                     newCreature.likes = currentPost["likes"] as! NSNumber
                     newCreature.timestamp = currentPost["time"] as! NSNumber
                     if UID == "" {
