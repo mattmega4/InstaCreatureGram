@@ -12,7 +12,11 @@ class Creature: NSObject {
     
     let myRootRef = Firebase(url: FirebaseUrl)
     var image = UIImage()
-    
+    var timestamp = NSNumber()
+    var creator = String()
+    var likes = NSNumber()
+    var id = String()
+    var email = String()
     
     func createNewCreature(image: UIImage) {
         self.image = image
@@ -21,18 +25,9 @@ class Creature: NSObject {
         let imageString = imageData.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
         let allPosts = myRootRef.childByAppendingPath("posts")
         let posts = allPosts.childByAutoId()
-        let postImage = posts.childByAppendingPath("image")
-        let postTimeStamp = posts.childByAppendingPath("time")
-        let postLikes = posts.childByAppendingPath("likes")
-        let postUser = posts.childByAppendingPath("user")
-        postUser.setValue(String(UID))
-        postLikes.setValue("0")
-        postImage.setValue(imageString)
-        postTimeStamp.setValue(FirebaseServerValue.timestamp())
-        
-//        posts.queryLimitedToLast(1).observeEventType(.ChildAdded, withBlock: { snapshot in
-//            self.createNewComments(snapshot.key, comment: "test test test")
-//        })
+        let newPost = ["email":EMAIL, "user":String(UID), "likes":0, "image":imageString, "time":FirebaseServerValue.timestamp()]
+        posts.setValue(newPost)
+        print("created creature")
     }
     
     func createNewComments(postID: String, comment:String) {
@@ -40,21 +35,39 @@ class Creature: NSObject {
         let commentsForPost = allComments.childByAppendingPath(postID)
         let newComment = commentsForPost.childByAppendingPath("content")
         newComment.setValue(comment)
-//        likeCreature()
-//        print("here")
+        print("created comment")
     }
     
     func likeCreature(postID: String) {
-//        let postID = "-KA7Z9hSx2T34aTQQy_U"
         let postLikes = myRootRef.childByAppendingPath("posts").childByAppendingPath(postID).childByAppendingPath("likes")
-        var currentLikes = NSString()
-        postLikes.observeEventType(.Value, withBlock: { snapshot in
-            currentLikes = snapshot.value as! NSString
-            }, withCancelBlock: { error in
-                print(error.description)
-        })
-//        currentLikes++
-        postLikes.setValue(currentLikes)
+        
+        var currentLikes = NSNumber()
+//        postLikes.observeEventType(.Value, withBlock: { snapshot in
+//            currentLikes = snapshot.value as! NSNumber
+//            }, withCancelBlock: { error in
+//                print(error.description)
+//        })
+        let urlString = String(format: "%@.json", postLikes.description)
+        let url = NSURL(string: urlString)
+        let session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithURL(url!) { (data, response, error) -> Void in
+            do {
+               currentLikes = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! NSNumber
+                let newLikes = Int(currentLikes) + 1
+                postLikes.setValue(newLikes)
+                print("liked comment")
+            }catch let error as NSError {
+                print("error"+error.localizedDescription)
+            }
+        }
+        task.resume()
+    }
+    
+    func getAllPostsForUser(userID: String) {
+        
+    }
+    
+    func getAllPosts() {
     }
     
 }
