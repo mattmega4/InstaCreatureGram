@@ -20,7 +20,6 @@ class Creature: NSObject {
     
     func createNewCreature(image: UIImage) {
         self.image = image
-//        self.image = UIImage(named: "logo1.png")!
         let imageData:NSData = UIImagePNGRepresentation(self.image)!
         let imageString = imageData.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
         let allPosts = myRootRef.childByAppendingPath("posts")
@@ -42,11 +41,6 @@ class Creature: NSObject {
         let postLikes = myRootRef.childByAppendingPath("posts").childByAppendingPath(postID).childByAppendingPath("likes")
         
         var currentLikes = NSNumber()
-//        postLikes.observeEventType(.Value, withBlock: { snapshot in
-//            currentLikes = snapshot.value as! NSNumber
-//            }, withCancelBlock: { error in
-//                print(error.description)
-//        })
         let urlString = String(format: "%@.json", postLikes.description)
         let url = NSURL(string: urlString)
         let session = NSURLSession.sharedSession()
@@ -62,12 +56,5 @@ class Creature: NSObject {
         }
         task.resume()
     }
-    
-    func getAllPostsForUser(userID: String) {
-        
-    }
-    
-    func getAllPosts() {
-    }
-    
+
 }

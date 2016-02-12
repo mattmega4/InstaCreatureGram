@@ -74,17 +74,17 @@
                             <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="2yW-YZ-gCe">
                                 <rect key="frame" x="0.0" y="260" width="600" height="40"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="midBarOne" translatesAutoresizingMaskIntoConstraints="NO" id="Bse-vq-oOV">
-                                        <rect key="frame" x="0.0" y="0.0" width="15" height="40"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="midBarOne" translatesAutoresizingMaskIntoConstraints="NO" id="Bse-vq-oOV">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="40"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="midBarTwo" translatesAutoresizingMaskIntoConstraints="NO" id="ieY-cL-Bj4">
-                                        <rect key="frame" x="15" y="0.0" width="195" height="40"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="midBarTwo" translatesAutoresizingMaskIntoConstraints="NO" id="ieY-cL-Bj4">
+                                        <rect key="frame" x="150" y="0.0" width="150" height="40"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="midBarThree" translatesAutoresizingMaskIntoConstraints="NO" id="AnD-wF-UWI">
-                                        <rect key="frame" x="210" y="0.0" width="195" height="40"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="midBarThree" translatesAutoresizingMaskIntoConstraints="NO" id="AnD-wF-UWI">
+                                        <rect key="frame" x="300" y="0.0" width="150" height="40"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="midBarFour" translatesAutoresizingMaskIntoConstraints="NO" id="vma-FY-Ekv">
-                                        <rect key="frame" x="405" y="0.0" width="195" height="40"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="midBarFour" translatesAutoresizingMaskIntoConstraints="NO" id="vma-FY-Ekv">
+                                        <rect key="frame" x="450" y="0.0" width="150" height="40"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -312,7 +312,7 @@
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" image="me" translatesAutoresizingMaskIntoConstraints="NO" id="h1z-2V-wJs">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="h1z-2V-wJs">
                                         <rect key="frame" x="16" y="10.5" width="107" height="107"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="107" id="2cd-cp-JcF"/>
@@ -445,7 +445,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="me" width="1365" height="1365"/>
         <image name="midBarFour" width="208" height="208"/>
         <image name="midBarOne" width="208" height="208"/>
         <image name="midBarThree" width="208" height="208"/>
