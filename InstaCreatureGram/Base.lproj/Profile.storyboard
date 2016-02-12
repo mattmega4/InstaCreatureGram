@@ -263,9 +263,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WxI-aJ-1T3">
-                                        <rect key="frame" x="399" y="18" width="8" height="21"/>
+                                        <rect key="frame" x="395" y="18" width="12" height="21"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="8" id="HJg-wr-h8I"/>
+                                            <constraint firstAttribute="width" constant="12" id="HJg-wr-h8I"/>
                                             <constraint firstAttribute="height" constant="21" id="d3k-GT-tVh"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
