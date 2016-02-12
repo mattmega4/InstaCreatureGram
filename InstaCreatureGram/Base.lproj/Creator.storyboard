@@ -10,7 +10,7 @@
         <!--Elemental Creator View Controller-->
         <scene sceneID="ogR-bu-Orb">
             <objects>
-                <viewController id="fJv-qP-0ld" customClass="ElementalCreatorViewController" customModule="InstaCreatureGram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Creator" id="fJv-qP-0ld" customClass="ElementalCreatorViewController" customModule="InstaCreatureGram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5nO-Gn-QTy"/>
                         <viewControllerLayoutGuide type="bottom" id="JIa-UO-BwK"/>
@@ -148,11 +148,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zRb-oq-QuL">
-                        <barButtonItem key="leftBarButtonItem" title="Screenshot" id="I5z-oZ-UQg">
-                            <connections>
-                                <action selector="screenShot:" destination="fJv-qP-0ld" id="ni6-FJ-ocg"/>
-                            </connections>
-                        </barButtonItem>
+                        <leftBarButtonItems>
+                            <barButtonItem title="Screenshot" id="I5z-oZ-UQg">
+                                <connections>
+                                    <action selector="screenShot:" destination="fJv-qP-0ld" id="ni6-FJ-ocg"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Library" id="trs-Y7-HIV">
+                                <connections>
+                                    <action selector="openLibrary:" destination="fJv-qP-0ld" id="g8Y-wm-SKc"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                         <rightBarButtonItems>
                             <barButtonItem title="Camera" id="SCO-zf-A3s">
                                 <connections>
@@ -179,7 +186,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pSz-hp-wIS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1075" y="1183"/>
+            <point key="canvasLocation" x="1070" y="1183"/>
         </scene>
     </scenes>
 </document>

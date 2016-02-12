@@ -12,41 +12,74 @@ class ElementalFeedViewController: UIViewController, UITableViewDataSource, UITa
     
     @IBOutlet weak var tableView: UITableView!
     
-//    let sampleArray = ["hello", "you", "dirty", "pirate", "trampoleen", "cat", "wolrd"]
+    let myRootRef = Firebase(url: FirebaseUrl)
     
+//    let sampleArray: [UIImage] = [
+//        UIImage(named: "logo1.png")!,
+//        UIImage(named: "logo2.png")!,
+//        UIImage(named: "logo3.png")!,
+//        UIImage(named: "logo4.png")!,
+//        UIImage(named: "logo5.png")!,
+//        UIImage(named: "logo6.png")!,
+//        UIImage(named: "logo7.png")!,
+//        UIImage(named: "logo8.png")!,
+//        UIImage(named: "logo9.png")!,
+//        UIImage(named: "logo10.png")!
+//    ]
     
-    let sampleArray: [UIImage] = [
-        UIImage(named: "logo1.png")!,
-        UIImage(named: "logo2.png")!,
-        UIImage(named: "logo3.png")!,
-        UIImage(named: "logo4.png")!,
-        UIImage(named: "logo5.png")!,
-        UIImage(named: "logo6.png")!,
-        UIImage(named: "logo7.png")!,
-        UIImage(named: "logo8.png")!,
-        UIImage(named: "logo9.png")!,
-        UIImage(named: "logo10.png")!
-    ]
+    let postArray = NSMutableArray()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        pullAllPosts()
+    
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        tableView.reloadData()
+    }
+    
+    func pullAllPosts() {
+        self.postArray.removeAllObjects()
+        let allPosts = myRootRef.childByAppendingPath("posts")
+        allPosts.keepSynced(true)
+        
+        allPosts.queryOrderedByChild("timestamp").observeEventType(.ChildAdded, withBlock: { snapshot in
+            if snapshot.value["user"] as! String != "" {
+                let newCreature = Creature()
+                let encodedData = snapshot.value["image"] as! String
+                let decodedData = NSData(base64EncodedString: encodedData, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
+                let decodedImage = UIImage(data: decodedData!)
+                newCreature.image = decodedImage!
+                newCreature.timestamp = snapshot.value["time"] as! NSNumber
+                newCreature.creator = snapshot.value["user"] as! String
+                newCreature.likes = snapshot.value["likes"] as! NSNumber
+                print(snapshot.key)
+                newCreature.email = snapshot.value["email"] as! String
+                newCreature.id = snapshot.key
+                self.postArray.addObject(newCreature)
+                self.tableView.reloadData()
+                print("got post")
+            }
+        })
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
       
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell")!
-        
-        cell.imageView!.image = self.sampleArray[indexPath.section]
-        
-        
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("PostCell")! as! PostTableViewCell
+        let currentPost = self.postArray[indexPath.section] as! Creature
+        cell.postCreature = currentPost
+        cell.postImageView!.image = currentPost.image
+        cell.postID = currentPost.id
+        cell.likeLabel.text = String(currentPost.likes)
         return cell
         
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return sampleArray.count
+        return postArray.count
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,16 +89,18 @@ class ElementalFeedViewController: UIViewController, UITableViewDataSource, UITa
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
-        let title = UIView()
-
-        // not sure why this was done, masks the image
-//        let string = self.sampleArray[section]
-//        title. = UIImage
+        let currentCreature = self.postArray[section] as! Creature
+        let header = UIView()
+        let headerLabel = UILabel()
+        headerLabel.text = currentCreature.email
+        header.addSubview(headerLabel)
+        headerLabel.frame = CGRectMake(0, 0, self.view.frame.size.width, 50)
+        headerLabel.textAlignment = NSTextAlignment.Center
+        headerLabel.backgroundColor = UIColor.whiteColor()
+        header.backgroundColor = UIColor.whiteColor()
+        header.alpha = 0.8
         
-//        title.backgroundColor = UIColor.blackColor()
-        title.alpha = 0.0
-        
-        return title
+        return header
     }
     
     func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -97,24 +132,6 @@ class ElementalFeedViewController: UIViewController, UITableViewDataSource, UITa
     
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 50.0
-    }
-    
-
-
-    @IBOutlet weak var tabOne: UITabBarItem!
-    
-    
-    //OPEN PHOTO LIBRARY FUNCTIONALITY
-    
-    @IBAction func openPhotoLibrary(sender: UIBarButtonItem) {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-            imagePicker.allowsEditing = true
-            self.presentViewController(imagePicker, animated: true, completion: nil)
-        }
-        
     }
 
 }

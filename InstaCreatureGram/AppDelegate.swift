@@ -11,6 +11,7 @@ import CoreData
 
 let FirebaseUrl = "https://instacreature.firebaseio.com/"
 var UID = ""
+var EMAIL = ""
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

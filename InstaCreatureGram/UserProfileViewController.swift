@@ -32,7 +32,11 @@ class UserProfileViewController: UIViewController, UICollectionViewDelegate, UIC
     
     @IBOutlet weak var midNavBar: UIStackView!
     
+    let myRootRef = Firebase(url: FirebaseUrl)
     
+    let userPosts = NSMutableArray()
+    
+    let userDefaults = NSUserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,6 +76,53 @@ class UserProfileViewController: UIViewController, UICollectionViewDelegate, UIC
         
         
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        getAllPosts()
+    }
+    
+    func getAllPosts() {
+        var allPosts = NSDictionary()
+        let posts = myRootRef.childByAppendingPath("posts")
+        let urlString = String(format: "%@.json", posts.description)
+        let url = NSURL(string: urlString)
+        let session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithURL(url!) { (data, response, error) -> Void in
+            do {
+                allPosts = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! NSDictionary
+                let keysArray = allPosts.allKeys
+                for i in 0...keysArray.count-1 {
+                    let currentKey = keysArray[i] as! String
+                    let currentPost = allPosts[currentKey] as! NSDictionary
+                    let newCreature = Creature()
+                    let encodedData = currentPost["image"] as! String
+                    let decodedData = NSData(base64EncodedString: encodedData, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
+                    let decodedImage = UIImage(data: decodedData!)
+                    newCreature.image = decodedImage!
+                    newCreature.id = currentPost["user"] as! String
+                    newCreature.email = currentPost["email"] as! String
+                    newCreature.likes = currentPost["likes"] as! NSNumber
+                    newCreature.timestamp = currentPost["time"] as! NSNumber
+                    if UID == "" {
+                        let userID = self.userDefaults.valueForKey("uid") as! String
+                        if newCreature.id == userID {
+                            self.userPosts.addObject(newCreature)
+                        }
+                    }else{
+                        if newCreature.id == UID {
+                            self.userPosts.addObject(newCreature)
+                        }
+                    }
+                }
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.collectionView.reloadData()
+                })
+            }catch let error as NSError {
+                print("error"+error.localizedDescription)
+            }
+        }
+        task.resume()
+    }
 
     override func viewWillLayoutSubviews() {
         collectionView.collectionViewLayout.invalidateLayout()
@@ -91,9 +142,9 @@ class UserProfileViewController: UIViewController, UICollectionViewDelegate, UIC
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CellCV",
             forIndexPath: indexPath)
-        
-       
-            cell.backgroundView = UIImageView.init(image: gridArr[indexPath.item])
+            let currentPost = userPosts[indexPath.row] as! Creature
+            cell.backgroundView = UIImageView.init(image: currentPost.image)
+//            cell.backgroundView = UIImageView.init(image: gridArr[indexPath.item])
         
         return cell
     }
@@ -101,7 +152,8 @@ class UserProfileViewController: UIViewController, UICollectionViewDelegate, UIC
     
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return gridArr.count
+        print(userPosts.count)
+        return userPosts.count
     }
 
     @IBAction func editProfileTapped(sender: AnyObject) {
