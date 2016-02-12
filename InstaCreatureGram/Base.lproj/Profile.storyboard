@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5Zx-Qa-IJu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5Zx-Qa-IJu">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -74,17 +74,17 @@
                             <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="2yW-YZ-gCe">
                                 <rect key="frame" x="0.0" y="260" width="600" height="40"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="midBarOne" translatesAutoresizingMaskIntoConstraints="NO" id="Bse-vq-oOV">
-                                        <rect key="frame" x="0.0" y="0.0" width="15" height="40"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="midBarOne" translatesAutoresizingMaskIntoConstraints="NO" id="Bse-vq-oOV">
+                                        <rect key="frame" x="0.0" y="0.0" width="102" height="40"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="midBarTwo" translatesAutoresizingMaskIntoConstraints="NO" id="ieY-cL-Bj4">
-                                        <rect key="frame" x="15" y="0.0" width="195" height="40"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="midBarTwo" translatesAutoresizingMaskIntoConstraints="NO" id="ieY-cL-Bj4">
+                                        <rect key="frame" x="102" y="0.0" width="166" height="40"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="midBarThree" translatesAutoresizingMaskIntoConstraints="NO" id="AnD-wF-UWI">
-                                        <rect key="frame" x="210" y="0.0" width="195" height="40"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="midBarThree" translatesAutoresizingMaskIntoConstraints="NO" id="AnD-wF-UWI">
+                                        <rect key="frame" x="268" y="0.0" width="166" height="40"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="midBarFour" translatesAutoresizingMaskIntoConstraints="NO" id="vma-FY-Ekv">
-                                        <rect key="frame" x="405" y="0.0" width="195" height="40"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="midBarFour" translatesAutoresizingMaskIntoConstraints="NO" id="vma-FY-Ekv">
+                                        <rect key="frame" x="434" y="0.0" width="166" height="40"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>

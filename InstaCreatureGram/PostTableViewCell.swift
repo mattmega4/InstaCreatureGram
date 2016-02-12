@@ -13,9 +13,13 @@ class PostTableViewCell: UITableViewCell {
     var postID = String()
     var postCreature = Creature()
     
+    @IBOutlet weak var likeButton: UIButton!
+    
     @IBOutlet weak var postImageView: UIImageView!
     
     @IBOutlet weak var likeLabel: UILabel!
+    
+    var liked = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,6 +27,8 @@ class PostTableViewCell: UITableViewCell {
         let tap = UITapGestureRecognizer(target: self, action: "onLikeButtonPressed")
         tap.numberOfTapsRequired = 2
         postImageView.addGestureRecognizer(tap)
+        
+
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -32,9 +38,13 @@ class PostTableViewCell: UITableViewCell {
     }
 
     @IBAction func onLikeButtonPressed(sender: AnyObject) {
+        print("test")
         Creature().likeCreature(self.postID)
         let updatedLikes = Int(likeLabel.text!)! + 1
         likeLabel.text = String(updatedLikes)
         postCreature.likes = updatedLikes
+        
+        likeButton.setImage(UIImage(named: "heartRed"), forState: UIControlState.Normal)
+        
     }
 }

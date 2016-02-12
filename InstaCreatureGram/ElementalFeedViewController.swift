@@ -13,19 +13,7 @@ class ElementalFeedViewController: UIViewController, UITableViewDataSource, UITa
     @IBOutlet weak var tableView: UITableView!
     
     let myRootRef = Firebase(url: FirebaseUrl)
-    
-//    let sampleArray: [UIImage] = [
-//        UIImage(named: "logo1.png")!,
-//        UIImage(named: "logo2.png")!,
-//        UIImage(named: "logo3.png")!,
-//        UIImage(named: "logo4.png")!,
-//        UIImage(named: "logo5.png")!,
-//        UIImage(named: "logo6.png")!,
-//        UIImage(named: "logo7.png")!,
-//        UIImage(named: "logo8.png")!,
-//        UIImage(named: "logo9.png")!,
-//        UIImage(named: "logo10.png")!
-//    ]
+
     
     let postArray = NSMutableArray()
 
@@ -34,6 +22,8 @@ class ElementalFeedViewController: UIViewController, UITableViewDataSource, UITa
         
         // Do any additional setup after loading the view.
         pullAllPosts()
+        
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 53.0/255, green: 70.0/255, blue: 94.0/255, alpha: 1.0)
     
     }
     
@@ -62,8 +52,11 @@ class ElementalFeedViewController: UIViewController, UITableViewDataSource, UITa
                 self.postArray.addObject(newCreature)
                 self.tableView.reloadData()
                 print("got post")
+                
             }
+            
         })
+        
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -74,6 +67,7 @@ class ElementalFeedViewController: UIViewController, UITableViewDataSource, UITa
         cell.postImageView!.image = currentPost.image
         cell.postID = currentPost.id
         cell.likeLabel.text = String(currentPost.likes)
+        
         return cell
         
     }
@@ -97,26 +91,49 @@ class ElementalFeedViewController: UIViewController, UITableViewDataSource, UITa
         headerLabel.frame = CGRectMake(0, 0, self.view.frame.size.width, 50)
         headerLabel.textAlignment = NSTextAlignment.Center
         headerLabel.backgroundColor = UIColor.whiteColor()
-        header.backgroundColor = UIColor.whiteColor()
+
         header.alpha = 0.8
         
         return header
     }
     
     func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let title = UIView()
-//        not sure why this was done, masks the image
-//        title.backgroundColor = UIColor.grayColor()
-        title.alpha = 0.0
         
-        return title
+
+    
+        let view = UIView()
+        
+        
+        view.backgroundColor = UIColor.purpleColor()
+        view.alpha = 0.8
+        
+        
+        let version = UILabel(frame: CGRectMake(28, 5, tableView.frame.width, 30))
+        version.font = version.font.fontWithSize(14)
+        version.text = "Cutest Puppy in the world"
+        version.textColor = UIColor.lightGrayColor()
+        version.textAlignment = .Left;
+        
+ 
+
+        
+        view.addSubview(version)
+       
+        
+        return view
+        
+       
+        
+//        return title
     }
+    
+   
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
         tableView.estimatedRowHeight = 11.0
         tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.contentInset = UIEdgeInsetsMake(0, -15, 0, 0);
+        self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
         
         return tableView.frame.width
     }
@@ -131,7 +148,7 @@ class ElementalFeedViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 50.0
+        return 40.0
     }
 
 }
