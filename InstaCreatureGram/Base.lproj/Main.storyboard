@@ -27,7 +27,7 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hGA-Hi-89z">
                                         <rect key="frame" x="0.0" y="30" width="200" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -100,11 +100,11 @@
             </objects>
             <point key="canvasLocation" x="263" y="411"/>
         </scene>
-        <!--Create Elemental-->
+        <!--Create-->
         <scene sceneID="dt6-3Q-h8a">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zHX-OD-zyc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Create Elemental" id="hsk-WG-gJ5"/>
+                    <tabBarItem key="tabBarItem" title="Create" id="hsk-WG-gJ5"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QE2-Zr-oNL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -138,11 +138,11 @@
             </objects>
             <point key="canvasLocation" x="1837" y="798"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Search-->
         <scene sceneID="8TN-FJ-Une">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ERY-2s-sbm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="OSr-dg-0KW"/>
+                    <tabBarItem key="tabBarItem" title="Search" id="OSr-dg-0KW"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="E44-Wo-XDC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -157,11 +157,13 @@
             </objects>
             <point key="canvasLocation" x="1837" y="-44"/>
         </scene>
-        <!--Elemental Feed-->
+        <!--Feed-->
         <scene sceneID="x1v-j3-fYu">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pIp-Ax-6fy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Elemental Feed" id="4GM-NX-kHM"/>
+                    <tabBarItem key="tabBarItem" title="Feed" badgeValue="1" id="4GM-NX-kHM">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wGk-51-hzg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

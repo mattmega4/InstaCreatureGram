@@ -58,7 +58,7 @@
                                     <outlet property="delegate" destination="5Zx-Qa-IJu" id="4yQ-S4-Qvp"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Matthew Singleton" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eR7-Df-tXN">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rafa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eR7-Df-tXN">
                                 <rect key="frame" x="25" y="195" width="170" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="5eI-bv-Dcz"/>
