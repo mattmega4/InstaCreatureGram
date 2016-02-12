@@ -59,7 +59,7 @@ class ElementalFeedViewController: UIViewController, UITableViewDataSource, UITa
                 print(snapshot.key)
                 newCreature.email = snapshot.value["email"] as! String
                 newCreature.id = snapshot.key
-                self.postArray.addObject(newCreature)
+                self.postArray.insertObject(newCreature, atIndex: 0)
                 self.tableView.reloadData()
                 print("got post")
             }
