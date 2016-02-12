@@ -63,8 +63,9 @@ class UserProfileViewController: UIViewController, UICollectionViewDelegate, UIC
     }
     
     func getUserData() {
-        let users = myRootRef.childByAppendingPath("users").childByAppendingPath(UID)
-        let urlString = String(format: "%@.json", users.description)
+        let uidString = UID.substringWithRange(Range<String.Index>(start: UID.startIndex.advancedBy(9), end: UID.endIndex))
+        let users = myRootRef.childByAppendingPath("users").childByAppendingPath(uidString)
+        let urlString = String(format: "%@.json", users)
         let url = NSURL(string: urlString)
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithURL(url!) { (data, response, error) -> Void in
