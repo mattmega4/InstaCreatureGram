@@ -43,6 +43,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         searchActive = false
+        searchBar.resignFirstResponder()
     }
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
