@@ -14,27 +14,11 @@ class ElementalFeedViewController: UIViewController, UITableViewDataSource, UITa
     
     let myRootRef = Firebase(url: FirebaseUrl)
     
-//    let sampleArray: [UIImage] = [
-//        UIImage(named: "logo1.png")!,
-//        UIImage(named: "logo2.png")!,
-//        UIImage(named: "logo3.png")!,
-//        UIImage(named: "logo4.png")!,
-//        UIImage(named: "logo5.png")!,
-//        UIImage(named: "logo6.png")!,
-//        UIImage(named: "logo7.png")!,
-//        UIImage(named: "logo8.png")!,
-//        UIImage(named: "logo9.png")!,
-//        UIImage(named: "logo10.png")!
-//    ]
-    
     let postArray = NSMutableArray()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
         pullAllPosts()
-    
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -84,7 +68,7 @@ class ElementalFeedViewController: UIViewController, UITableViewDataSource, UITa
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-         return 1
+        return 1
     }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -105,8 +89,6 @@ class ElementalFeedViewController: UIViewController, UITableViewDataSource, UITa
     
     func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let title = UIView()
-//        not sure why this was done, masks the image
-//        title.backgroundColor = UIColor.grayColor()
         title.alpha = 0.0
         
         return title
@@ -120,9 +102,6 @@ class ElementalFeedViewController: UIViewController, UITableViewDataSource, UITa
         
         return tableView.frame.width
     }
-    
-    
-    
     
     func tableView(tableView: UITableView,
         heightForHeaderInSection section: Int) -> CGFloat{
