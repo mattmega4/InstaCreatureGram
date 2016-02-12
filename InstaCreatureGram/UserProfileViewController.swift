@@ -57,21 +57,21 @@ class UserProfileViewController: UIViewController, UICollectionViewDelegate, UIC
         self.automaticallyAdjustsScrollViewInsets = false
         
         gridArr = [
-            UIImage(named: "mid1.jpg")!,
-            UIImage(named: "mid2.jpg")!,
-            UIImage(named: "mid3.jpg")!,
-            UIImage(named: "mid4.jpg")!,
-            UIImage(named: "mid5.jpg")!,
-            UIImage(named: "mid6.jpg")!,
-            UIImage(named: "mid7.jpg")!,
-            UIImage(named: "mid8.jpg")!,
-            UIImage(named: "mid9.jpg")!,
-            UIImage(named: "mid10.jpg")!,
-            UIImage(named: "mid11.jpg")!,
-            UIImage(named: "mid12.jpg")!,
-            UIImage(named: "mid13.jpg")!,
-            UIImage(named: "mid14.jpg")!,
-            UIImage(named: "mid15.jpg")!
+            UIImage(named: "bot1.jpg")!,
+            UIImage(named: "bot2.jpg")!,
+            UIImage(named: "bot3.jpg")!,
+            UIImage(named: "bot4.jpg")!,
+            UIImage(named: "bot5.jpg")!,
+            UIImage(named: "bot6.jpg")!,
+            UIImage(named: "bot7.jpg")!,
+            UIImage(named: "bot8.jpg")!,
+            UIImage(named: "bot9.jpg")!,
+            UIImage(named: "bot10.jpg")!,
+            UIImage(named: "bot11.jpg")!,
+            UIImage(named: "bot12.jpg")!,
+            UIImage(named: "bot13.jpg")!,
+            UIImage(named: "bot14.jpg")!,
+            UIImage(named: "bot15.jpg")!
         ]
         
         
@@ -148,6 +148,8 @@ class UserProfileViewController: UIViewController, UICollectionViewDelegate, UIC
         
         return cell
     }
+    
+    
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print(userPosts.count)

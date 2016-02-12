@@ -20,7 +20,7 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
     var imagePicker: UIImagePickerController!
     var storedOffsets = [Int: CGFloat]()
     var topArr: [UIImage]!
-    var midArr: [UIImage]!
+    var bodArr: [UIImage]!
     var botArr: [UIImage]!
     var newCreature = Creature()
     
@@ -113,45 +113,33 @@ class ElementalCreatorViewController: UIViewController, UITableViewDelegate, UIT
             UIImage(named: "top10.png")!
         ]
         
-        midArr = [
-            UIImage(named: "mid1.jpg")!,
-            UIImage(named: "mid2.jpg")!,
-            UIImage(named: "mid3.jpg")!,
-            UIImage(named: "mid4.jpg")!,
-            UIImage(named: "mid5.jpg")!,
-            UIImage(named: "mid6.jpg")!,
-            UIImage(named: "mid7.jpg")!,
-            UIImage(named: "mid8.jpg")!,
-            UIImage(named: "mid9.jpg")!,
-            UIImage(named: "mid10.jpg")!,
-            UIImage(named: "mid11.jpg")!,
-            UIImage(named: "mid12.jpg")!,
-            UIImage(named: "mid13.jpg")!,
-            UIImage(named: "mid14.jpg")!,
-            UIImage(named: "mid15.jpg")!,
-            UIImage(named: "mid16.jpg")!
+        bodArr = [
+            UIImage(named: "mid1.png")!,
+            UIImage(named: "mid2.png")!,
+            UIImage(named: "mid3.png")!,
+            UIImage(named: "mid4.png")!,
+            UIImage(named: "mid5.png")!,
+            UIImage(named: "mid6.png")!,
+            UIImage(named: "mid7.png")!,
+            UIImage(named: "mid8.png")!,
+            UIImage(named: "mid9.png")!,
+            UIImage(named: "mid10.png")!
         ]
         
         botArr = [
-            UIImage(named: "mid1.jpg")!,
-            UIImage(named: "mid2.jpg")!,
-            UIImage(named: "mid3.jpg")!,
-            UIImage(named: "mid4.jpg")!,
-            UIImage(named: "mid5.jpg")!,
-            UIImage(named: "mid6.jpg")!,
-            UIImage(named: "mid7.jpg")!,
-            UIImage(named: "mid8.jpg")!,
-            UIImage(named: "mid9.jpg")!,
-            UIImage(named: "mid10.jpg")!,
-            UIImage(named: "mid11.jpg")!,
-            UIImage(named: "mid12.jpg")!,
-            UIImage(named: "mid13.jpg")!,
-            UIImage(named: "mid14.jpg")!,
-            UIImage(named: "mid15.jpg")!,
-            UIImage(named: "mid16.jpg")!
+            UIImage(named: "one.png")!,
+            UIImage(named: "two.png")!,
+            UIImage(named: "three.png")!,
+            UIImage(named: "four.png")!,
+            UIImage(named: "five.png")!,
+            UIImage(named: "six.png")!,
+            UIImage(named: "seven.png")!,
+            UIImage(named: "eight.png")!,
+            UIImage(named: "nine.png")!,
+            UIImage(named: "ten.png")!
         ]
         
-        self.combinedArr = [topArr, midArr, botArr]
+        self.combinedArr = [topArr, bodArr, botArr]
         
 
 }

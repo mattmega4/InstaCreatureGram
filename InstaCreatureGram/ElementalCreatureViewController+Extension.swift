@@ -34,7 +34,7 @@ extension ElementalCreatorViewController: UICollectionViewDelegate, UICollection
             if collectionView.tag == 0 {
                 cell.backgroundView = UIImageView.init(image: topArr[indexPath.item])
             } else if (collectionView.tag == 1) {
-                cell.backgroundView = UIImageView.init(image: midArr[indexPath.item])
+                cell.backgroundView = UIImageView.init(image: bodArr[indexPath.item])
             } else if (collectionView.tag == 2) {
                 cell.backgroundView = UIImageView.init(image: botArr[indexPath.item])
             }
